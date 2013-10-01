@@ -12,26 +12,29 @@ public class Heros
     /**
      * The name of the Heros
      */
-    // TODO (fix) rename field (just name)
-    private String nameH;
+    // TODO (fixed) rename field (just name)
+    private String name;
 
     /**
      * The table which contains the Heros' spells
      */
-    // TODO (fix) rename field (just spell)
-    private Spell spellH;
+    // TODO (fixed) rename field (just spell)
+    private Spell spell;
 
     /**
      * The Heros' passive
      */
-    // TODO (fix) rename field (passivePower)
-    private Passive passiveH;
+    // TODO (fixed) rename field (passivePower)
+    private Passive passivePower;
 
-    /**
-     * // TODO (fix) describe what the instance should look like
-     * 
-     * This is the constructor of heros will be used by the subclasses. Because
+  
+     // TODO (fixed) describe what the instance should look like
+      
+     /** This is the constructor of heros will be used by the subclasses. Because
      * each feature depends of the heros which is chosen.
+     * 
+     * The instance will create a hero with a name, a spell and a passive.
+     * For example Conan, with his passive power and one spell 
      * 
      * @param name
      *            His name
@@ -42,9 +45,9 @@ public class Heros
      */
     public Heros(String name, Spell spell, Passive passive)
     {
-        this.nameH = name;
-        this.passiveH = passive;
-        this.spellH = spell;
+        this.name = name;
+        this.passivePower = passive;
+        this.spell = spell;
     }
 
 }

@@ -10,26 +10,24 @@ public class Player
     /**
      * The name of the player.
      */
-    // TODO (fix) rename field (just name)
-    private String nameP;
+    // TODO (fixed) rename field (just name)
+    private String name;
 
     /**
      * The heros which was chosen by the player.
      */
-    // TODO (fix) rename field (just heroChosen)
-    private Heros herosChosen;
+    // TODO (fixed) rename field (just heroChosen)
+    private Heros heroChosen;
 
-    /**
-     * // TODO (fix) do not say how it works but what it does
-     * At first, we will use just one heros to test the program
-     * 
-     * @param name
-     *            the name of the player
+    // TODO (fixed) do not say how it works but what it does
+    /** At first, we will use just one heros to test the program
+     * This constructor create the player with the hero chosen 
+     * @param name the name of the player
      */
-    public Player(String name)
+    public Player(String name, Heros heroChosen)
     {
-        this.nameP = name;
-        this.herosChosen = new Conan();
+        this.name = name;
+        this.heroChosen = heroChosen;
 
     }
 
