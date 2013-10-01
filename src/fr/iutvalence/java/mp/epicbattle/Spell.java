@@ -16,5 +16,7 @@ public class Spell
      */
     // TODO (fixed) rename field (just name)
     private String name;
+    
+    private Effect effect;
 
 }
