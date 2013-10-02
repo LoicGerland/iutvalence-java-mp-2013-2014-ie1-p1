@@ -1,7 +1,7 @@
 package fr.iutvalence.java.mp.epicbattle;
 
 /**
- * @author gerlandl
+ * @author KAYRAK GERLAND
  * This class represents the magic attacks which directly attack the warrior.
  * 
  */
@@ -28,7 +28,7 @@ public class Destruction extends Effect
     // TODO create the class Warrior
     void application(Warrior warrior)
     {
-        warrior.pv = warrior.pv-damage;
+        warrior.hp = warrior.hp-damage;
     }
 
 }

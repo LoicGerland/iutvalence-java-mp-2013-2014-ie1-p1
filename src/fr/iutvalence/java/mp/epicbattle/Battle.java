@@ -19,28 +19,60 @@ public class Battle
      * The players which will play the battle.
      */
     // TODO (fixed) rename field (just players)
-    private Player[] players;
+    private Player[] players;   
+    
+    /**
+     * This number represents how much turn are occurred.
+     */
+    private int turnNb;
+    
+    /**
+     * The player which plays while the turn.
+     */
+    private Player whoPlays;
+    
+    /**
+     * The player which doesn't play while the turn.
+     */
+    private Player whoDoesNotPlay;
 
     
     // TODO (fixed) do not say how it works but what it does
      /** 
-     * The game is automatically created. This is a temporally solution waiting
-     * the parameters.
-     * This constructor create a battle between two players. 
-     * @param name1
-     *            Name of the first player
-     * @param name2
-     *            Name of the second player
+     * This constructor creates a battle between two players. 
+     * It also assigns a hero to each players.
+     * @param name1 Name of the first player
+     * @param hero1 His hero
+     * @param name2 Name of the second player        
+     * @param hero2 His heros
      * 
      */
 
     public Battle(String name1, Heros hero1, String name2, Heros hero2)
     {
-
         this.players = new Player[2];
         this.players[1] = new Player(name1, hero1);
         this.players[2] = new Player(name2, hero2);
-
+        this.turnNb = 1;
+        this.whoPlays = this.players[1];
+        this.whoDoesNotPlay = this.players[2];
     }
+    
+    /**
+     * The next turn is initialized.
+     * 
+     */
+    private void nextTurn()
+    {
+        this.turnNb = this.turnNb+1;
+        int i;
+        i = this.turnNb%2 + 1;
+        /**
+         * The player which plays is defined from the number of the turn.
+         */
+        this.whoPlays = this.players[i+1];
+        this.whoDoesNotPlay = this.players[i];
+    }
+    
 
 }
