@@ -20,6 +20,7 @@ public class Destruction extends Effect
     
     /**
      * Create a destruction effect
+     * @param name The name of the spell
      * @param damage the damage are use to construct the effect.
      */
     public Destruction(String name, int damage)
@@ -29,11 +30,10 @@ public class Destruction extends Effect
     }
 
     /**
-     * @param warrior the warrior which receives the effect.
+     * @param Warrior the warrior which receives the effect.
      * The application of this effect decrease a warrior's live.  
      */
     @Override
-    // TODO create the class Warrior
     public void application(Warrior target)
     {
         target.hp = target.hp-this.damage;

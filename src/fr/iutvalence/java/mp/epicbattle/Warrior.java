@@ -8,7 +8,7 @@ package fr.iutvalence.java.mp.epicbattle;
 public class Warrior
 {
     /**
-     * The name of the warrior's class. (ex : spearman, mage)
+     * The name of the warrior's class. (ex : spearman, wizard)
      */
     public String name; 
     /**

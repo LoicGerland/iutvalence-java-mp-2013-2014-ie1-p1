@@ -1,9 +1,10 @@
 package fr.iutvalence.java.mp.epicbattle;
 
 /**
- * @author Kayrak Gerland The class player define one of the two opponents of
- *         the battle. It is compound of the name of the player and the heros
- *         chosen. It could be one of the two sub-class : Human or IA.
+ * @author GERLAND KAYRAK
+ * The class player define one of the two opponents of the battle.
+ * It is compound of the name of the player and the heros chosen.
+ * It could be one of the two sub-class : Human or IA.
  */
 public class Player
 {
