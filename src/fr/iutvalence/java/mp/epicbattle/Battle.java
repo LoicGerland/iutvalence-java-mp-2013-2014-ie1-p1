@@ -76,7 +76,6 @@ public class Battle
      * @param hero1 His hero
      * @param name2 Name of the second player        
      * @param hero2 His heros
-     * 
      */
 
     public Battle(String name1, Heros hero1, String name2, Heros hero2)
