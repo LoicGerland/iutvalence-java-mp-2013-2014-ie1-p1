@@ -19,13 +19,13 @@ public class Heros
      * The table which contains the Heros' spells
      */
     // TODO (fixed) rename field (just spell)
-    private Spell spell;
+    private Effect spell;
 
     /**
      * The Heros' passive
      */
     // TODO (fixed) rename field (passivePower)
-    private Passive passivePower;
+    private Effect passivePower;
 
   
      // TODO (fixed) describe what the instance should look like
@@ -40,14 +40,23 @@ public class Heros
      *            His name
      * @param spell
      *            His spell
-     * @param passive
+     * @param passivePower
      *            His passive
      */
-    public Heros(String name, Spell spell, Passive passive)
+    public Heros(String name, Effect spell, Effect passivePower)
     {
         this.name = name;
-        this.passivePower = passive;
+        this.passivePower = passivePower;
         this.spell = spell;
+    }
+    
+    /**
+     * Use a spell against a warrior
+     * @param target the warrior who is focused by the spell
+     */
+    public void useSpell(Warrior target)
+    {
+        this.spell.application(target);
     }
 
 }

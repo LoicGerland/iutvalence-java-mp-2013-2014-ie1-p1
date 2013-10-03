@@ -22,7 +22,8 @@ public class Player
     // TODO (fixed) do not say how it works but what it does
     /** At first, we will use just one heros to test the program
      * This constructor create the player with the hero chosen 
-     * @param name the name of the player
+     * @param name The name of the player
+     * @param heroChosen The hero which the player chose.
      */
     public Player(String name, Heros heroChosen)
     {

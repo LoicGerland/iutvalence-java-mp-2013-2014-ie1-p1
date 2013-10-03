@@ -3,12 +3,13 @@ package fr.iutvalence.java.mp.epicbattle;
 /**
  * @author KAYRAK GERLAND
  * Effect is an abstract class which gathers all the types of effect.
- * The effect is linked to a passive or a spell.
+ * An effect could represent a passive, a spell and an attack.
  */
 abstract public class Effect
-{
+{   
     /**
      * Application is the action of the effect in the battle.
+     * @param warrior The warrior which receives the effect
      */
-    abstract void application(Warrior warrior);
+    public abstract void application(Warrior warrior);
 }

@@ -2,21 +2,29 @@ package fr.iutvalence.java.mp.epicbattle;
 
 /**
  * @author KAYRAK GERLAND
- * This class represents the magic attacks which directly attack the warrior.
+ * It represents offensive effects.
  * 
  */
 public class Destruction extends Effect
 {
     
     /**
+     * Name of the effect
+     */
+    public String name;
+    /**
      * The amount of the damage defines the power of the effect. 
      */
     public int damage; 
     
+    
     /**
+     * Create a destruction effect
      * @param damage the damage are use to construct the effect.
      */
-    public Destruction(int damage){
+    public Destruction(String name, int damage)
+    {
+        this.name = name;
         this.damage = damage;
     }
 
@@ -26,9 +34,9 @@ public class Destruction extends Effect
      */
     @Override
     // TODO create the class Warrior
-    void application(Warrior warrior)
+    public void application(Warrior target)
     {
-        warrior.hp = warrior.hp-damage;
+        target.hp = target.hp-this.damage;
     }
 
 }
