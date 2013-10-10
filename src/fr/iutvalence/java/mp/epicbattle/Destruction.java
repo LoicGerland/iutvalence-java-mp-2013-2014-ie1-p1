@@ -15,7 +15,7 @@ public class Destruction extends Effect
     
     
     /**
-     * Create a destruction effect
+     * It creates a destruction effect
      * @param name the name of the damage effect
      * @param speed the speed of the effect
      * @param damage the damage are use to construct the effect

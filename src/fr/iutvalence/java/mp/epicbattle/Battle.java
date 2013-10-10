@@ -58,7 +58,7 @@ public class Battle
     private int[] dataChoices;
     
     /**
-     * This number represents how much turn are occurred.
+     * This number represents how much turnre are occurred.
      */
     private int turnNb;
     
@@ -91,7 +91,7 @@ public class Battle
         this.players = new Player[2];      
         this.players[1] = new Player(name1, hero1, warrior1);
         this.players[2] = new Player(name2, hero2, warrior2);
-        // The third slot will be allowed to change warrior in the battle.
+        // The third slot will be allowed to change warrior in the battle
         this.dataChoices = new int[3];
         this.turnNb = 1;
     }
@@ -101,14 +101,15 @@ public class Battle
      */
     public void doTheTurn()
     {
-        // The speed of the first player
         int speedP1=0;
-        // The speed of the second player
         int speedP2=0;
         applyPassives();
+        // The player choose what they want to do
+            // Their speeds depending of what they do
         speedP1=play(1);
         speedP1=play(2);
-        // If the speeds are the same, the player 1 get the first move. 
+        // Who does he play at first ? 
+            // If the speeds are the same, the player 1 get the first move 
         if (speedP2>speedP1)
         {
             executeChoice(2);

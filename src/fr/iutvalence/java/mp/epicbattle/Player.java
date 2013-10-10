@@ -1,7 +1,7 @@
 package fr.iutvalence.java.mp.epicbattle;
 
 /**
- * @author Kayrak Gerland The class player define one of the two opponents of
+ * @author Kayrak Gerland The class player defines one of the two opponents of
  *         the battle. It is compounded of the name of the player and the heros
  *         chosen. It could be one of the two sub-class : Human or IA.
  */
@@ -26,7 +26,7 @@ public class Player
 
     // TODO (fixed) do not say how it works but what it does
     /** At first, we will use just one heros to test the program
-     * This constructor create the player with the hero chosen 
+     * This constructor creates the player with the hero chosen 
      * @param name The name of the player
      * @param heroChosen The hero which the player chose.
      */
@@ -37,4 +37,5 @@ public class Player
         this.warriorChosen = warriorChosen;
     }
 
+    
 }
