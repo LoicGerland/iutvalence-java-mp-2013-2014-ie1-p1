@@ -58,7 +58,7 @@ public class Battle
     private int[] dataChoices;
     
     /**
-     * This number represents how much turnre are occurred.
+     * This number represents how much turn was occurred.
      */
     private int turnNb;
     
@@ -126,7 +126,7 @@ public class Battle
 
 
     /**
-     * A player plays. 
+     * The player choose what he wants to do. His speed depends on this.
      * @param playerNumber index of the player : player one or player two.
      * @return the player Speed of the player's action
      */

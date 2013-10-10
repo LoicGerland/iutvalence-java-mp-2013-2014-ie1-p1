@@ -28,7 +28,7 @@ public class Destruction extends Effect
     }
 
     /**
-     * It decreases a warrior's live depending of the amount of damage 
+     * It decreases a warrior's live depending on the amount of damage 
      */
     @Override
     public void application(Battle battle)

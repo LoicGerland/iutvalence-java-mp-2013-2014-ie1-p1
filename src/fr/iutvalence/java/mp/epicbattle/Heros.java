@@ -2,7 +2,7 @@ package fr.iutvalence.java.mp.epicbattle;
 
 /**
  * @author Kayrak Gerland The heros will be chosen in a list of pre-create
- *         heros. They will be defined in sub-class The class heros is compound
+ *         heros. They will be defined in sub-class The class heros is compounded
  *         of his name, his spells, (a picture) and a passive power which will
  *         impact warriors' characteristics.
  */
