@@ -8,8 +8,16 @@ package fr.iutvalence.java.mp.epicbattle;
 abstract public class Effect
 {   
     /**
-     * Application is the action of the effect in the battle.
-     * @param warrior The warrior which receives the effect
+     * Name of the effect
      */
-    public abstract void application(Warrior warrior);
+    public String name;
+    /**
+     * The speed of the effect
+     */
+    public int speed;
+    /**
+     * Application is the action of the effect in the battle.
+     * @param battle The battle where the effect is applied
+     */
+    public abstract void application(Battle battle);
 }

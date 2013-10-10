@@ -9,10 +9,6 @@ public class Destruction extends Effect
 {
     
     /**
-     * Name of the effect
-     */
-    public String name;
-    /**
      * The amount of the damage defines the power of the effect. 
      */
     public int damage; 
@@ -20,23 +16,24 @@ public class Destruction extends Effect
     
     /**
      * Create a destruction effect
-     * @param damage the damage are use to construct the effect.
+     * @param name the name of the damage effect
+     * @param speed the speed of the effect
+     * @param damage the damage are use to construct the effect
      */
-    public Destruction(String name, int damage)
+    public Destruction(String name, int speed, int damage)
     {
         this.name = name;
+        this.speed = speed;
         this.damage = damage;
     }
 
     /**
-     * @param warrior the warrior which receives the effect.
-     * The application of this effect decrease a warrior's live.  
+     * It decreases a warrior's live depending of the amount of damage 
      */
     @Override
-    // TODO create the class Warrior
-    public void application(Warrior target)
+    public void application(Battle battle)
     {
-        target.hp = target.hp-this.damage;
+        battle.passivePlayer.warriorChosen.hp = battle.passivePlayer.warriorChosen.hp-this.damage;
     }
 
 }

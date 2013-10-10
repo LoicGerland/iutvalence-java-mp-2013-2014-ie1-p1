@@ -52,11 +52,32 @@ public class Heros
     
     /**
      * Use a spell against a warrior
-     * @param target the warrior who is focused by the spell
+     * @param battle the battle where the spell is used
      */
-    public void useSpell(Warrior target)
+    public void useSpell(Battle battle)
     {
-        this.spell.application(target);
+        this.spell.application(battle);
     }
+    
+    /**
+     * Return the speed of the spell
+     * @return the speed of the spell
+     */
+    public int useSpellSpeed()
+    {
+        return this.spell.speed;
+    }
+
+    /**
+     * It applies the passive of the hero
+     * @param battle The battle where the passive is used
+     */
+    public void applyPassive(Battle battle)
+    {
+        this.passivePower.application(battle);
+        
+    }
+    
+    
 
 }
