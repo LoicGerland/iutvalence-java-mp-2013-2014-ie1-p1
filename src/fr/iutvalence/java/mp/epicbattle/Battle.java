@@ -97,7 +97,7 @@ public class Battle
     }
     
     /**
-     * The execution of a turn.
+     * The execution of a turn
      */
     public void doTheTurn()
     {
