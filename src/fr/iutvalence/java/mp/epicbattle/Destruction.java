@@ -2,7 +2,7 @@ package fr.iutvalence.java.mp.epicbattle;
 
 /**
  * @author KAYRAK GERLAND
- * It represents offensive effects
+ * It represents offensive effects.
  * 
  */
 public class Destruction extends Effect
