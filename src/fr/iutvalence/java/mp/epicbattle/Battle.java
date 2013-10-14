@@ -1,7 +1,7 @@
 package fr.iutvalence.java.mp.epicbattle;
 
 /**
- * This class represents a new game. It is compounded a table of two players. //
+ * This class represents a new game. It is compounded a table of two players //
  * TODO (fixed) next line is useless Player is a class which will be described in
  * Player.java
  * 

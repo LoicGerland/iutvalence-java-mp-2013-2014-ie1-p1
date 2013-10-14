@@ -3,7 +3,7 @@ package fr.iutvalence.java.mp.epicbattle;
 /**
  * @author KAYRAK GERLAND
  * The warrior is the one which stands the damage.
- * A player looses when all his warriors are dead.
+ * A player looses when all his warriors are dead
  */
 public class Warrior
 {
