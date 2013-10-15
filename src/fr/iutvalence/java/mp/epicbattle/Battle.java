@@ -67,17 +67,17 @@ public class Battle
      */
     private int turnNb;
     
-    // TODO (fix) this field should not be declared as public
+    // TODO (fixed) this field should not be declared as public
     /**
      * The player which plays while the turn.
      */
-    public Player activePlayer;
+    private Player activePlayer;
 
-    // TODO (fix) this field should not be declared as public
+    // TODO (fixed) this field should not be declared as public
     /**
      * The player which doesn't play while the turn.
      */
-    public Player passivePlayer;
+    private Player passivePlayer;
 
     
     // TODO (fixed) do not say how it works but what it does
@@ -180,7 +180,7 @@ public class Battle
     {
         if (this.dataChoices[playerNumber]==1)
         {
-            attack();
+            attack();          
         }
         // He uses a spell
         if (this.dataChoices[playerNumber]==2)
@@ -196,16 +196,12 @@ public class Battle
     }
 
     /**
-     * New turn.
-     */
-    
-    /**
      * The speed of the player if he chooses to attack with his warrior
      * @return the speed of the attack 
      */
     public int attackSpeed()
     {
-        return this.activePlayer.warriorChosen.attackSpeed();
+        return this.activePlayer.getWarrior().getSpeedAttack();
     }
     
     /**
@@ -213,7 +209,14 @@ public class Battle
      */
     public void attack()
     {
-        this.activePlayer.warriorChosen.attack(this);
+        if (this.activePlayer.getWarrior().getAttack().getAggressive())
+        {
+            this.activePlayer.getWarrior().attack(this.passivePlayer.getWarrior());
+        }
+        else
+        {
+            this.activePlayer.getWarrior().attack(this.activePlayer.getWarrior());
+        }
     }
     
     /**
@@ -222,7 +225,7 @@ public class Battle
      */
     public int useSpellSpeed()
     {
-        return this.activePlayer.heroChosen.useSpellSpeed();
+        return this.activePlayer.getHero().getSpell().getSpeed();
     }
     
     /**
@@ -230,7 +233,14 @@ public class Battle
      */
     public void useSpell()
     {
-        this.activePlayer.heroChosen.useSpell(this);
+        if (this.activePlayer.getHero().getSpell().getAggressive())
+        {
+            this.activePlayer.getHero().useSpell(this.passivePlayer.getWarrior());
+        }
+        else
+        {
+            this.activePlayer.getHero().useSpell(this.activePlayer.getWarrior());
+        }
     }
     
     /**
@@ -238,9 +248,28 @@ public class Battle
      */
     private void applyPassives()
     {
-        this.players[1].heroChosen.applyPassive(this);
-        this.players[2].heroChosen.applyPassive(this);
-    }   
+        // We apply the passive of the player 1
+        if (this.players[1].getHero().getPassive().getAggressive())
+        {
+            this.players[1].getHero().applyPassive(this.players[2].getWarrior());
+        }
+        else
+        {
+            this.players[1].getHero().applyPassive(this.players[1].getWarrior());
+        }
+        // We apply the passive of the player 2
+        if (this.players[2].getHero().getPassive().getAggressive())
+        {
+            this.players[2].getHero().applyPassive(this.players[1].getWarrior());
+        }
+        else
+        {
+            this.players[2].getHero().applyPassive(this.players[2].getWarrior());
+        }
+    }
+    
+    
+ 
     
 
 }

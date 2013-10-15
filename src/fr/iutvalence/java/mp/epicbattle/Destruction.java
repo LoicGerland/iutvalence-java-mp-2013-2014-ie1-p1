@@ -7,11 +7,12 @@ package fr.iutvalence.java.mp.epicbattle;
  */
 public class Destruction extends Effect
 {
-    // TODO (fix) this field should not be declared as public
+    // TODO (fixed) this field should not be declared as public
     /**
      * The amount of the damage defines the power of the effect. 
      */
-    public int damage; 
+    private int damage; 
+    
     
     
     /**
@@ -22,8 +23,7 @@ public class Destruction extends Effect
      */
     public Destruction(String name, int speed, int damage)
     {
-        this.name = name;
-        this.speed = speed;
+        super(name,speed);
         this.damage = damage;
     }
 
@@ -31,9 +31,9 @@ public class Destruction extends Effect
      * It decreases a warrior's live depending on the amount of damage 
      */
     @Override
-    public void application(Battle battle)
+    public void application(int power, Warrior target)
     {
-        battle.passivePlayer.warriorChosen.hp = battle.passivePlayer.warriorChosen.hp-this.damage;
+        target.applyDamage(power+this.damage) ;
     }
 
 }

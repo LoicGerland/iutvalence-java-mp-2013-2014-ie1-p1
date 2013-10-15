@@ -14,9 +14,9 @@ public class Heros
      */
     private String name;
 
-    // TODO (fix) fix comment
+    // TODO (fixed) fix comment
     /**
-     * The table which contains the Heros' spells
+     * The spell of the hero
      */
     private Effect spell;
 
@@ -48,33 +48,39 @@ public class Heros
     // TODO (think bout it) the way you manage spells is somewhat strange
     /**
      * Use a spell against a warrior
-     * @param battle the battle where the spell is used
+     * @param target the warrior focused
      */
-    public void useSpell(Battle battle)
+    public void useSpell(Warrior target)
     {
-        this.spell.application(battle);
+        this.spell.application(0,target);
     }
     
-    // TODO (fix) rename method (more explicit)
-    /**
-     * Return the speed of the spell
-     * @return the speed of the spell
-     */
-    public int useSpellSpeed()
-    {
-        return this.spell.speed;
-    }
-
     /**
      * It applies the passive of the hero
-     * @param battle The battle where the passive is used
+     * @param target the warrior who receives the passive
      */
-    public void applyPassive(Battle battle)
+    public void applyPassive(Warrior target)
     {
-        this.passivePower.application(battle);
-        
+        this.passivePower.application(0,target);
     }
     
+    /**
+     * the spell of the hero
+     * @return The spell of the hero
+     */
+    public Effect getSpell()
+    {
+        return this.spell;
+    }
     
+    /**
+     * the passive of the hero
+     * @return the passive of the hero
+     */
+    public Effect getPassive()
+    {
+        return this.passivePower;
+    }
+
 
 }

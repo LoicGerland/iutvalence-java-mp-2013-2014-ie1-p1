@@ -7,22 +7,57 @@ package fr.iutvalence.java.mp.epicbattle;
  */
 abstract public class Effect
 {   
-    // TODO (fix) this field should not be declared as public
+    // TODO (fixed) this field should not be declared as public
     /**
      * Name of the effect
      */
-    public String name;
+    private String name;
     
-    // TODO (fix) this field should not be declared as public
+    // TODO (fixed) this field should not be declared as public
     /**
      * The speed of the effect
      */
-    public int speed;
+    private int speed;
+    
+    /**
+     * Aggressive or defensive attack
+     */
+    private boolean aggressive;
     
     // TODO (think about it) i am not sure that an effect applies to a battle
     /**
      * Application is the action of the effect in the battle.
      * @param battle The battle where the effect is applied
      */
-    public abstract void application(Battle battle);
+    public Effect(String name, int speed)
+    {
+     this.name = name;
+     this.speed = speed;
+    }
+    
+    /**
+     * To know the speed of the attack
+     * @return the speed of the attack
+     */
+    public int getSpeed()
+    {
+        return this.speed;
+    }
+    
+    /**
+     * Who is he focused by the attack ?
+     * @return the boolean aggressive
+     */
+    public boolean getAggressive()
+    {
+        return this.aggressive;
+    }
+    
+    /**
+     * The 
+     * @param power the characteristic of the launcher
+     * @param target the warrior focused
+     */
+    public abstract void application(int power, Warrior target);
+    
 }

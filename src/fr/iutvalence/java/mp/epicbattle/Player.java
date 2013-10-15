@@ -12,23 +12,24 @@ public class Player
      */
     private String name;
 
-    // TODO (fix) this field should not be declared as public
+    // TODO (fixed) this field should not be declared as public
     /**
      * The heros which was chosen by the player.
      */
-    public Heros heroChosen;
+    private Heros heroChosen;
 
-    // TODO (fix) this field should not be declared as public
+    // TODO (fixed) this field should not be declared as public
     /**
      * The warrior which was chosen by the player.
      */
-    public Warrior warriorChosen;
+    private Warrior warriorChosen;
 
-    // TODO (fix) finish writing comment
-    /** At first, we will use just one heros to test the program
+    // TODO (fixed) finish writing comment
+    /**
      * This constructor creates the player with the hero chosen 
      * @param name The name of the player
      * @param heroChosen The hero which the player chose.
+     * @param warriorChosen The warrior chosen by the player
      */
     public Player(String name, Heros heroChosen, Warrior warriorChosen)
     {
@@ -37,5 +38,22 @@ public class Player
         this.warriorChosen = warriorChosen;
     }
 
+    /**
+     * The warrior chosen by the player
+     * @return the warrior chosen by the player
+     */
+    public Warrior getWarrior()
+    {
+        return this.warriorChosen;
+    }
+    
+    /**
+     * The hero of the player
+     * @return the hero of the player
+     */
+    public Heros getHero()
+    {
+        return this.heroChosen;
+    }
     
 }

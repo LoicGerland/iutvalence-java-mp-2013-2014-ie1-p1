@@ -7,35 +7,35 @@ package fr.iutvalence.java.mp.epicbattle;
  */
 public class Warrior
 {
-    // TODO (fix) this field should not be declared as public
+    // TODO (fixed) this field should not be declared as public
     /**
      * The name of the warrior's class. (ex : spearman, wizard)
      */
-    public String name; 
+    private String name; 
     
-    // TODO (fix) this field should not be declared as public
+    // TODO (fixed) this field should not be declared as public
     /**
     * The strength defines the damage which inflicts the warrior.
     */
-    public int strength;
+    private int strength;
     
-    // TODO (fix) this field should not be declared as public
+    // TODO (fixed) this field should not be declared as public
     /**
      * The health points defines the amount of life of the warrior.
     */
-    public int hp;  
+    private int hp;  
     
-    // TODO (fix) this field should not be declared as public
+    // TODO (fixed) this field should not be declared as public
     /**
      * The speed of the warrior.
      */
-    public int speed; 
+    private int speed; 
     
-    // TODO (fix) this field should not be declared as public
+    // TODO (fixed) this field should not be declared as public
     /**
      * The attack is the offensive action which can execute a warrior.
      */
-    public Effect attack;
+    private Effect attack;
 
     /**
      * It creates a warrior depending of the parameters.
@@ -56,22 +56,42 @@ public class Warrior
     
     /**
      * Offensive of the warrior
-     * @param battle The battle where the attack is done
+     * @param target the warrior who receives the attack
      */
     // Later, we will implement a table with multiple attacks.
-    public void attack(Battle battle)
+    public void attack(Warrior target)
     {
-        this.attack.application(battle);
+        this.attack.application(this.strength,target);
     }
 
-    /**
-     * The speed of the attack
-     * @return the speed of the attack
-     */
-    public int attackSpeed()
+    /** 
+    * Who is he focused by this spell ?
+    * @return the boolean aggressive
+    */
+   public Effect getAttack()
+   {
+       return this.attack;
+   }
+   
+   /**
+   * the speed of the warrior when he's attacking.
+   * @return the amount of the speed of the warrior
+   */
+   public int getSpeedAttack()
+   {
+       return this.speed + this.attack.getSpeed();
+   }
+
+   /**
+    * The warrior get damage.
+    * @param damage the amount of the damage
+    */
+    public void applyDamage(int damage)
     {
-        return this.attack.speed+this.speed;
+       this.hp = this.hp - damage;
     }
+
+
     
     
 }
