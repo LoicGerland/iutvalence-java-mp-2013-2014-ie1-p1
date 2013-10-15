@@ -7,23 +7,31 @@ package fr.iutvalence.java.mp.epicbattle;
  */
 public class Warrior
 {
+    // TODO (fix) this field should not be declared as public
     /**
      * The name of the warrior's class. (ex : spearman, wizard)
      */
     public String name; 
+    
+    // TODO (fix) this field should not be declared as public
     /**
     * The strength defines the damage which inflicts the warrior.
     */
     public int strength;
+    
+    // TODO (fix) this field should not be declared as public
     /**
      * The health points defines the amount of life of the warrior.
     */
     public int hp;  
+    
+    // TODO (fix) this field should not be declared as public
     /**
      * The speed of the warrior.
      */
     public int speed; 
     
+    // TODO (fix) this field should not be declared as public
     /**
      * The attack is the offensive action which can execute a warrior.
      */

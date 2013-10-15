@@ -1,9 +1,10 @@
 package fr.iutvalence.java.mp.epicbattle;
 
+
+// TODO (think about it) this class, which represents a battle, should only have one public method called "play" that handle a battle. All other methods, called from "play"
+// should be private
 /**
- * This class represents a new game. It is compounded a table of two players. //
- * TODO (fixed) next line is useless Player is a class which will be described in
- * Player.java
+ * This class represents a new game. It is compounded a table of two players. 
  * 
  * @author GERLAND KAYRAK
  * 
@@ -46,12 +47,16 @@ public class Battle
     // TODO (think about it) consider separating the heroes with which the player
     // plays and how he plays (i.e how he interacts with the game).
     
+    
+    // TODO (fix) some of the following fields should not be fields but local variables, think about it
+    
     /**
      * The players which will play the battle.
      */
-    // TODO (fixed) rename field (just players)
     private Player[] players;
     
+    
+    // TODO (fix) finish writing comment, documenting what values can take array cells
     /**
      * What the players want to do
      */
@@ -62,11 +67,13 @@ public class Battle
      */
     private int turnNb;
     
+    // TODO (fix) this field should not be declared as public
     /**
      * The player which plays while the turn.
      */
     public Player activePlayer;
-    
+
+    // TODO (fix) this field should not be declared as public
     /**
      * The player which doesn't play while the turn.
      */

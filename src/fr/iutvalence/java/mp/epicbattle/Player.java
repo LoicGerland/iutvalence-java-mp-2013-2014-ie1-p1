@@ -10,21 +10,21 @@ public class Player
     /**
      * The name of the player.
      */
-    // TODO (fixed) rename field (just name)
     private String name;
 
+    // TODO (fix) this field should not be declared as public
     /**
      * The heros which was chosen by the player.
      */
-    // TODO (fixed) rename field (just heroChosen)
     public Heros heroChosen;
-    
+
+    // TODO (fix) this field should not be declared as public
     /**
      * The warrior which was chosen by the player.
      */
     public Warrior warriorChosen;
 
-    // TODO (fixed) do not say how it works but what it does
+    // TODO (fix) finish writing comment
     /** At first, we will use just one heros to test the program
      * This constructor creates the player with the hero chosen 
      * @param name The name of the player

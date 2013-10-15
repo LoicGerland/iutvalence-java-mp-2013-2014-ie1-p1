@@ -12,28 +12,23 @@ public class Heros
     /**
      * The name of the Heros
      */
-    // TODO (fixed) rename field (just name)
     private String name;
 
+    // TODO (fix) fix comment
     /**
      * The table which contains the Heros' spells
      */
-    // TODO (fixed) rename field (just spell)
     private Effect spell;
 
     /**
      * The Heros' passive
      */
-    // TODO (fixed) rename field (passivePower)
     private Effect passivePower;
 
   
-     // TODO (fixed) describe what the instance should look like
       
-     /** This is the constructor of heros will be used by the subclasses. Because
-     * each feature depends of the heros which is chosen.
-     * 
-     * The instance will create a hero with a name, a spell and a passive.
+     /** 
+     * This constructor creates a hero with a name, a spell and a passive.
      * For example Conan, with his passive power and one spell 
      * 
      * @param name
@@ -50,6 +45,7 @@ public class Heros
         this.spell = spell;
     }
     
+    // TODO (think bout it) the way you manage spells is somewhat strange
     /**
      * Use a spell against a warrior
      * @param battle the battle where the spell is used
@@ -59,6 +55,7 @@ public class Heros
         this.spell.application(battle);
     }
     
+    // TODO (fix) rename method (more explicit)
     /**
      * Return the speed of the spell
      * @return the speed of the spell

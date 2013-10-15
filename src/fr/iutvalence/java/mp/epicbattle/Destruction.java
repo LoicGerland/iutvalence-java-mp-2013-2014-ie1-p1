@@ -7,7 +7,7 @@ package fr.iutvalence.java.mp.epicbattle;
  */
 public class Destruction extends Effect
 {
-    
+    // TODO (fix) this field should not be declared as public
     /**
      * The amount of the damage defines the power of the effect. 
      */
