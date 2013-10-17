@@ -91,7 +91,13 @@ public class Warrior
        this.hp = this.hp - damage;
     }
 
-
+    /**
+     * @return The hp of the warrior
+     */
+    public int getHp()
+    {
+        return this.hp;
+    }
     
     
 }

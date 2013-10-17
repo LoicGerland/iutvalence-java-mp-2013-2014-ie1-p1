@@ -12,38 +12,7 @@ package fr.iutvalence.java.mp.epicbattle;
 
 public class Battle
 {
-    // Temporally in the Class battle.
-    // Constants
-    
-    // Spells
-    /**
-     * Yell is the spell of Conan. It inflicts damage to the opponent.
-     */
-    public final static Effect YELL = new Destruction("Yell", 5, 5);
-    // Passives
-    /**
-     * The barbarian's karma is a passive which inflicts damages to the enemy warrior each turn.
-     */
-    public final static Effect BARBARIANKARMA = new Destruction("barbarian karma", 2, 1);
-    // Heroes
-    /**
-     * Conan is an offensive hero.
-     */
-    public final static Heros CONAN = new Heros("Conan", YELL, BARBARIANKARMA); 
-    // Attacks
-    /**
-     * Ax Blow is the basic attack of the axeman.
-     */
-    public final static Effect AXBLOW = new Destruction("Ax Blow", 5, 10);   
-    // Warriors
-    /**
-     * Axeman is a barbarian warrior.
-     */
-    public final static Warrior AXEMAN = new Warrior("Axeman", 10, 30, 10, AXBLOW);
-    
-    
-    
-    
+   
     // TODO (think about it) consider separating the heroes with which the player
     // plays and how he plays (i.e how he interacts with the game).
     
@@ -55,12 +24,15 @@ public class Battle
      */
     private Player[] players;
     
-    
-    // TODO (fix) finish writing comment, documenting what values can take array cells
     /**
-     * What the players want to do
+     * The choice of the player1
      */
-    private int[] dataChoices;
+    private Choice choice1;
+    
+    /**
+     * The choice of the player2
+     */
+    private Choice choice2;
     
     /**
      * This number represents how much turn was occurred.
@@ -96,10 +68,8 @@ public class Battle
             String name2, Heros hero2, Warrior warrior2)
     {
         this.players = new Player[2];      
-        this.players[1] = new Player(name1, hero1, warrior1);
-        this.players[2] = new Player(name2, hero2, warrior2);
-        // The third slot will be allowed to change warrior in the battle
-        this.dataChoices = new int[3];
+        this.players[0] = new Player(name1, hero1, warrior1);
+        this.players[1] = new Player(name2, hero2, warrior2);
         this.turnNb = 1;
     }
     
@@ -111,10 +81,13 @@ public class Battle
         int speedP1=0;
         int speedP2=0;
         applyPassives();
+        choice1 = new Choice(effect,warrior);
+        choice2 = new Choice(this.players[2],effect,this.players[2].getWarrior());
+        
         // The player choose what they want to do
             // Their speeds depending of what they do
         speedP1=play(1);
-        speedP1=play(2);
+        speedP2=play(2);
         // Who does he play at first ? 
             // If the speeds are the same, the player 1 get the first move 
         if (speedP2>speedP1)
@@ -172,28 +145,6 @@ public class Battle
         return speed;
     }
     
-    /**
-     * It executes the action which a player has chosen.
-     * @param playerNumber a player's number
-     */
-    private void executeChoice(int playerNumber)
-    {
-        if (this.dataChoices[playerNumber]==1)
-        {
-            attack();          
-        }
-        // He uses a spell
-        if (this.dataChoices[playerNumber]==2)
-        {
-            useSpell();
-        }
-        // TODO Create the method to change warrior
-        // He changes warrior
-        // The slowest move of the game
-        if (this.dataChoices[playerNumber]==3)
-        {
-        }
-    }
 
     /**
      * The speed of the player if he chooses to attack with his warrior
@@ -249,22 +200,22 @@ public class Battle
     private void applyPassives()
     {
         // We apply the passive of the player 1
+        if (this.players[0].getHero().getPassive().getAggressive())
+        {
+            this.players[0].getHero().applyPassive(this.players[1].getWarrior());
+        }
+        else
+        {
+            this.players[0].getHero().applyPassive(this.players[0].getWarrior());
+        }
+        // We apply the passive of the player 2
         if (this.players[1].getHero().getPassive().getAggressive())
         {
-            this.players[1].getHero().applyPassive(this.players[2].getWarrior());
+            this.players[1].getHero().applyPassive(this.players[0].getWarrior());
         }
         else
         {
             this.players[1].getHero().applyPassive(this.players[1].getWarrior());
-        }
-        // We apply the passive of the player 2
-        if (this.players[2].getHero().getPassive().getAggressive())
-        {
-            this.players[2].getHero().applyPassive(this.players[1].getWarrior());
-        }
-        else
-        {
-            this.players[2].getHero().applyPassive(this.players[2].getWarrior());
         }
     }
     
