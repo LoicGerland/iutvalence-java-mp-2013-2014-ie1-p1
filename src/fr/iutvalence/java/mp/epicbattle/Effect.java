@@ -23,12 +23,11 @@ public abstract class Effect
      */
     private boolean aggressive;
 
-    // TODO (fix) finish writing comment
+    // TODO (fixed) finish writing comment
     /**
-     * Application is the action of the effect in the battle.
      * 
-     * @param battle
-     *            The battle where the effect is applied
+     * @param name the name of the effect
+     * @param speed the speed of the effect
      */
     public Effect(String name, int speed)
     {
@@ -57,7 +56,7 @@ public abstract class Effect
     }
 
     /**
-     * The
+     * The method used to apply the effect
      * 
      * @param power
      *            the characteristic of the launcher

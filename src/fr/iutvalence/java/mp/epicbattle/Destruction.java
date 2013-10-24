@@ -11,9 +11,9 @@ public class Destruction extends Effect
      */
     private int damage;
 
-    // TODO (fix) detail comment
+    // TODO (fixed) detail comment
     /**
-     * It creates a destruction effect
+     * It creates an effect name destruction, it's a hero's spell
      * 
      * @param name
      *            the name of the damage effect

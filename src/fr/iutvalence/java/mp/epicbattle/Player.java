@@ -21,6 +21,8 @@ public class Player
      * The warrior which was chosen by the player.
      */
     private Warrior warriorChosen;
+    
+    private Choice choice;
 
     /**
      * This constructor creates the player with the hero chosen
@@ -59,4 +61,23 @@ public class Player
         return this.heroChosen;
     }
 
+    /**
+     * If the player chose to attack with the warrior, this method will save the choice 
+     * @param warrior the warrior target
+     */
+    public void chooseAttack(Warrior warrior)
+    {
+        this.choice = new Choice(this.warriorChosen.getAttack(),warrior);
+    }    
+    
+    /**
+     * If the player chose the spell, this method will save the choice 
+     * @param warrior the warrior target
+     */
+    public void chooseSpell(Warrior warrior)
+    {
+        this.choice = new Choice(this.heroChosen.getSpell(),warrior);
+        
+    } 
+    
 }

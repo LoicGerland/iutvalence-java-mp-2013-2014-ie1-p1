@@ -1,5 +1,10 @@
 package fr.iutvalence.java.mp.epicbattle;
 
+/**
+ * The class main, for test the game
+ * @author GERLAND, KAYRAK
+ *
+ */
 public class Main
 {
 
@@ -33,7 +38,8 @@ public class Main
         /**
          * Axeman is a barbarian warrior.
          */
-        final Warrior AXEMAN = new Warrior("Axeman", 10, 30, 10, AXBLOW);
+        final Warrior AXEMAN1 = new Warrior("Axeman1", 10, 30, 10, AXBLOW);
+        final Warrior AXEMAN2 = new Warrior("Axeman2", 10, 30, 10, AXBLOW);
 
         String J1 = "J1";
 
@@ -41,12 +47,15 @@ public class Main
 
         Battle Game;
 
-        Game = new Battle(J1, CONAN, AXEMAN, J2, CONAN, AXEMAN);
+        Game = new Battle(J1, CONAN, AXEMAN1, J2, CONAN, AXEMAN2);
 
-        System.out.println(AXEMAN.getHp());
-        CONAN.getSpell().application(15, AXEMAN);
-        System.out.println(AXEMAN.getHp());
-
+        System.out.println(AXEMAN1.getHp());
+        CONAN.getSpell().application(15, AXEMAN1);
+        System.out.println(AXEMAN1.getHp());
+        System.out.println(Game.getPlayer(0).getWarrior().getHp());
+        System.out.println(Game.getPlayer(1).getWarrior().getHp());
+        Game.getPlayer(0).chooseAttack(AXEMAN2);
+        System.out.println(AXEMAN2.getHp());
     }
 
 }

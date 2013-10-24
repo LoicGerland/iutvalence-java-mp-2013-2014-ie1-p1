@@ -69,17 +69,17 @@ public class Battle
         this.numberOfCurrentTurn = 1;
     }
 
-    // TODO (fix) should be private
+    // TODO (fixed) should be private
     /**
      * The execution of a turn
      */
-    public void doTheTurn()
+    private void doTheTurn()
     {
         int speedP1 = 0;
         int speedP2 = 0;
         applyPassives();
-        choice1 = new Choice(effect, warrior);
-        choice2 = new Choice(this.players[2], effect, this.players[2].getWarrior());
+        choice1 = 
+        choice2 = 
 
         // The player choose what they want to do
         // Their speeds depending of what they do
@@ -141,59 +141,7 @@ public class Battle
         return speed;
     }
 
-    // TODO (fix) should be private
-    /**
-     * The speed of the player if he chooses to attack with his warrior
-     * 
-     * @return the speed of the attack
-     */
-    public int attackSpeed()
-    {
-        return this.activePlayer.getWarrior().getSpeedAttack();
-    }
-
-    // TODO (fix) should be private
-    /**
-     * A warrior attacks an other warrior.
-     */
-    public void attack()
-    {
-        if (this.activePlayer.getWarrior().getAttack().getAggressive())
-        {
-            this.activePlayer.getWarrior().attack(this.passivePlayer.getWarrior());
-        }
-        else
-        {
-            this.activePlayer.getWarrior().attack(this.activePlayer.getWarrior());
-        }
-    }
-
-    // TODO (fix) should be private
-    /**
-     * The speed of the player if he chooses to attack with his warrior
-     * 
-     * @return the speed of the spell
-     */
-    public int useSpellSpeed()
-    {
-        return this.activePlayer.getHero().getSpell().getSpeed();
-    }
-
-    // TODO (fix) should be private
-    /**
-     * We use a spell
-     */
-    public void useSpell()
-    {
-        if (this.activePlayer.getHero().getSpell().getAggressive())
-        {
-            this.activePlayer.getHero().useSpell(this.passivePlayer.getWarrior());
-        }
-        else
-        {
-            this.activePlayer.getHero().useSpell(this.activePlayer.getWarrior());
-        }
-    }
+    
 
     /**
      * It applies the two passives at beginning of each turn
@@ -220,4 +168,13 @@ public class Battle
         }
     }
 
+    /**
+     * This method return the player 1 or 2
+     * @param i the number of the player
+     * @return the player 1 or 2
+     */
+    public Player getPlayer(int i)
+    {
+        return this.players[i];
+    }
 }
