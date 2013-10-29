@@ -10,8 +10,8 @@ public abstract class Effect
     /**
      * Name of the effect
      */
+    // TODO (fix) it lacks a getter for this field
     private String name;
-
 
     /**
      * The speed of the effect
@@ -26,8 +26,10 @@ public abstract class Effect
     // TODO (fixed) finish writing comment
     /**
      * 
-     * @param name the name of the effect
-     * @param speed the speed of the effect
+     * @param name
+     *            the name of the effect
+     * @param speed
+     *            the speed of the effect
      */
     public Effect(String name, int speed)
     {

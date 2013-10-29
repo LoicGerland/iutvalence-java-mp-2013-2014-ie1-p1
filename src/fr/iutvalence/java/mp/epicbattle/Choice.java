@@ -40,6 +40,6 @@ public class Choice
      */
     public int getSpeed()
     {
-        return effect.getSpeed();
+        return this.effect.getSpeed();
     }
 }

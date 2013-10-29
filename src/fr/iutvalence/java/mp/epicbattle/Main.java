@@ -2,12 +2,14 @@ package fr.iutvalence.java.mp.epicbattle;
 
 /**
  * The class main, for test the game
+ * 
  * @author GERLAND, KAYRAK
- *
+ * 
  */
 public class Main
 {
 
+    // TODO (fix) write comment
     public static void main(String[] args)
     {
         // Temporally in the Class battle.

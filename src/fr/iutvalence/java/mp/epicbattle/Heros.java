@@ -12,9 +12,9 @@ public class Heros
     /**
      * The name of the Heros
      */
+    // TODO (fix) it lacks a getter for this field
     private String name;
 
-    // TODO (fixed) fix comment
     /**
      * The spell of the hero
      */

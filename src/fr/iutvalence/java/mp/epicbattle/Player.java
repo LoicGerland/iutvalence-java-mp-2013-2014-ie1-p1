@@ -21,7 +21,9 @@ public class Player
      * The warrior which was chosen by the player.
      */
     private Warrior warriorChosen;
-    
+
+    // TODO (fix) write comment
+    // TODO (fix) this field looks like a local variable
     private Choice choice;
 
     /**
@@ -62,22 +64,29 @@ public class Player
     }
 
     /**
-     * If the player chose to attack with the warrior, this method will save the choice 
-     * @param warrior the warrior target
+     * If the player chose to attack with the warrior, this method will save the
+     * choice
+     * 
+     * @param warrior
+     *            the warrior target
      */
+    // TODO (fix) this method should return the choice
     public void chooseAttack(Warrior warrior)
     {
-        this.choice = new Choice(this.warriorChosen.getAttack(),warrior);
-    }    
-    
+        this.choice = new Choice(this.warriorChosen.getAttack(), warrior);
+    }
+
     /**
-     * If the player chose the spell, this method will save the choice 
-     * @param warrior the warrior target
+     * If the player chose the spell, this method will save the choice
+     * 
+     * @param warrior
+     *            the warrior target
      */
+    // TODO (fix) this method should return the choice
     public void chooseSpell(Warrior warrior)
     {
-        this.choice = new Choice(this.heroChosen.getSpell(),warrior);
-        
-    } 
-    
+        this.choice = new Choice(this.heroChosen.getSpell(), warrior);
+
+    }
+
 }

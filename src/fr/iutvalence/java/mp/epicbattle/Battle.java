@@ -1,14 +1,14 @@
 package fr.iutvalence.java.mp.epicbattle;
 
-// TODO (think about it) this class, which represents a battle, should only have one public method called "play" that handle a battle. All other methods, called from "play"
-// should be private
 /**
  * This class represents a new game. It is compounded a table of two players.
  * 
  * @author GERLAND KAYRAK
  * 
  */
-
+// TODO (fix) this class should only have one public method, which starts and
+// play
+// the whole game
 public class Battle
 {
 
@@ -17,6 +17,7 @@ public class Battle
      */
     private Player[] players;
 
+    // TODO (fix) the two following fields look like local variable
     /**
      * The choice of the player1
      */
@@ -27,6 +28,7 @@ public class Battle
      */
     private Choice choice2;
 
+    // TODO (fix) the following field looks like local variable
     /**
      * This number represents how much turn was occurred.
      */
@@ -78,8 +80,7 @@ public class Battle
         int speedP1 = 0;
         int speedP2 = 0;
         applyPassives();
-        choice1 = 
-        choice2 = 
+        choice1 = choice2 =
 
         // The player choose what they want to do
         // Their speeds depending of what they do
@@ -141,8 +142,6 @@ public class Battle
         return speed;
     }
 
-    
-
     /**
      * It applies the two passives at beginning of each turn
      */
@@ -170,7 +169,9 @@ public class Battle
 
     /**
      * This method return the player 1 or 2
-     * @param i the number of the player
+     * 
+     * @param i
+     *            the number of the player
      * @return the player 1 or 2
      */
     public Player getPlayer(int i)
