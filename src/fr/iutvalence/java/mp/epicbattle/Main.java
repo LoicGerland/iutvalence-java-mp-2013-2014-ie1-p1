@@ -9,7 +9,10 @@ package fr.iutvalence.java.mp.epicbattle;
 public class Main
 {
 
-    // TODO (fix) write comment
+    // TODO (fixed) write comment
+    /**
+     * In this main ,we create some heroes,warriors and spell to test the game.
+     */
     public static void main(String[] args)
     {
         // Temporally in the Class battle.
@@ -56,7 +59,7 @@ public class Main
         System.out.println(AXEMAN1.getHp());
         System.out.println(Game.getPlayer(0).getWarrior().getHp());
         System.out.println(Game.getPlayer(1).getWarrior().getHp());
-        Game.getPlayer(0).chooseAttack(AXEMAN2);
+        Game.getPlayer(0).getChoice(AXEMAN2);
         System.out.println(AXEMAN2.getHp());
     }
 

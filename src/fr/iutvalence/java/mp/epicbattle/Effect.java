@@ -10,7 +10,7 @@ public abstract class Effect
     /**
      * Name of the effect
      */
-    // TODO (fix) it lacks a getter for this field
+    // TODO (fixed) it lacks a getter for this field
     private String name;
 
     /**
@@ -37,6 +37,17 @@ public abstract class Effect
         this.speed = speed;
     }
 
+    
+    /**
+     * To know the name of the effect
+     * 
+     * @return the name of the effect
+     */
+    public String getName()
+    {
+        return this.name;
+    }
+
     /**
      * To know the speed of the attack
      * 
@@ -56,6 +67,7 @@ public abstract class Effect
     {
         return this.aggressive;
     }
+  
 
     /**
      * The method used to apply the effect

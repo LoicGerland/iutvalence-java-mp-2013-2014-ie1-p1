@@ -22,9 +22,8 @@ public class Player
      */
     private Warrior warriorChosen;
 
-    // TODO (fix) write comment
-    // TODO (fix) this field looks like a local variable
-    private Choice choice;
+    // TODO (fixed) write comment
+    // TODO (fixed) this field looks like a local variable
 
     /**
      * This constructor creates the player with the hero chosen
@@ -69,24 +68,13 @@ public class Player
      * 
      * @param warrior
      *            the warrior target
+     * @return the choice of the player
      */
-    // TODO (fix) this method should return the choice
-    public void chooseAttack(Warrior warrior)
+    // TODO (fixed) this method should return the choice
+    public Choice getChoice(Warrior warrior)
     {
-        this.choice = new Choice(this.warriorChosen.getAttack(), warrior);
+        return new Choice(this.warriorChosen.getAttack(), warrior);
     }
-
-    /**
-     * If the player chose the spell, this method will save the choice
-     * 
-     * @param warrior
-     *            the warrior target
-     */
-    // TODO (fix) this method should return the choice
-    public void chooseSpell(Warrior warrior)
-    {
-        this.choice = new Choice(this.heroChosen.getSpell(), warrior);
-
-    }
+    
 
 }

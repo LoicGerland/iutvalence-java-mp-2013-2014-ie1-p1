@@ -9,7 +9,7 @@ public class Warrior
     /**
      * The name of the warrior's class. (ex : spearman, wizard)
      */
-    // TODO (fix) itlacks a getter for this field
+    // TODO (fixed) it lacks a getter for this field
     private String name;
 
     /**
@@ -67,6 +67,17 @@ public class Warrior
         this.attack.application(this.strength, target);
     }
 
+    
+    /**
+     * To know the name of the Warrior
+     * 
+     * @return The name of the Warrior
+     */
+    public String getName()
+    {
+        return this.name;
+    }
+    
     /**
      * Who is he focused by this spell ?
      * 

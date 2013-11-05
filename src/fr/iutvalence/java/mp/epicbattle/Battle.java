@@ -6,7 +6,7 @@ package fr.iutvalence.java.mp.epicbattle;
  * @author GERLAND KAYRAK
  * 
  */
-// TODO (fix) this class should only have one public method, which starts and
+// TODO (fixed) this class should only have one public method, which starts and
 // play
 // the whole game
 public class Battle
@@ -17,33 +17,10 @@ public class Battle
      */
     private Player[] players;
 
-    // TODO (fix) the two following fields look like local variable
-    /**
-     * The choice of the player1
-     */
-    private Choice choice1;
+    // TODO (fixed) the two following fields look like local variable
 
-    /**
-     * The choice of the player2
-     */
-    private Choice choice2;
+    // TODO (fixed) the following field looks like local variable
 
-    // TODO (fix) the following field looks like local variable
-    /**
-     * This number represents how much turn was occurred.
-     */
-    private int numberOfCurrentTurn;
-
-    // TODO (fix) one variable should be enough, and it should be a local one
-    /**
-     * The player which plays while the turn.
-     */
-    private Player activePlayer;
-
-    /**
-     * The player which doesn't play while the turn.
-     */
-    private Player passivePlayer;
 
     /**
      * This constructor creates a battle between two players. It also assigns a
@@ -68,9 +45,28 @@ public class Battle
         this.players = new Player[2];
         this.players[0] = new Player(name1, hero1, warrior1);
         this.players[1] = new Player(name2, hero2, warrior2);
-        this.numberOfCurrentTurn = 1;
     }
 
+    /**
+     * This method launchs the game 
+     * @param name1 the name of the player 1 
+     * @param hero1 the hero of the player 1 
+     * @param warrior1 the warrior of the player 1 
+     * @param name2 the name of the player 2
+     * @param hero2 the hero of the player 2 
+     * @param warrior2 the warrior of the player 2 
+     */
+    public void play(String name1, Heros hero1, Warrior warrior1, String name2, Heros hero2, Warrior warrior2)
+    {
+        Player activePlayer = players[1];
+        int numberOfCurrentTurn = 1;
+        new Battle(name1,hero1,warrior1,name2,hero2,warrior2);
+        while (numberOfCurrentTurn<100)
+        {
+            doTheTurn();
+            numberOfCurrentTurn = numberOfCurrentTurn + 1;
+        }
+    }
     // TODO (fixed) should be private
     /**
      * The execution of a turn
@@ -80,7 +76,6 @@ public class Battle
         int speedP1 = 0;
         int speedP2 = 0;
         applyPassives();
-        choice1 = choice2 =
 
         // The player choose what they want to do
         // Their speeds depending of what they do
@@ -98,7 +93,6 @@ public class Battle
             executeChoice(1);
             executeChoice(2);
         }
-        this.numberOfCurrentTurn = this.numberOfCurrentTurn + 1;
     }
 
     /**
@@ -108,7 +102,7 @@ public class Battle
      *            index of the player : player one or player two.
      * @return the player Speed of the player's action
      */
-    private int play(int playerNumber)
+    private int aPlayerPlay(int playerNumber)
     {
         int choice = 1;
         int speed = 0;

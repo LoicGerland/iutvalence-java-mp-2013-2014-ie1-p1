@@ -12,7 +12,7 @@ public class Heros
     /**
      * The name of the Heros
      */
-    // TODO (fix) it lacks a getter for this field
+    // TODO (fixed) it lacks a getter for this field
     private String name;
 
     /**
@@ -66,6 +66,16 @@ public class Heros
         this.passivePower.application(0, target);
     }
 
+    
+    /**
+     * To know the name of the Hero
+     * 
+     * @return The name of the Hero
+     */
+    public String getName()
+    {
+        return this.name;
+    }
     /**
      * the spell of the hero
      * 
