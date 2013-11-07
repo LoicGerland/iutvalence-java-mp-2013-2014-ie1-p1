@@ -52,7 +52,7 @@ public class Heros
      */
     public void useSpell(Warrior target)
     {
-        this.spell.application(0, target);
+        this.spell.application(target);
     }
 
     /**
@@ -63,7 +63,7 @@ public class Heros
      */
     public void applyPassive(Warrior target)
     {
-        this.passivePower.application(0, target);
+        this.passivePower.application(target);
     }
 
     

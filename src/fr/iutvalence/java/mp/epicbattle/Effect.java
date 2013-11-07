@@ -19,9 +19,16 @@ public abstract class Effect
     private int speed;
 
     /**
-     * Aggressive or defensive attack
+     * 0/aggressive/an effect which is applied on the enemy warrior
+     * 1/defensive/an effect which is applied on the warrior played
+     * 2/swap/an effect which allows to swap warrior played
      */
-    private boolean aggressive;
+    private int type;
+    
+    /**
+     * Is it the hero which will use the effect ?
+     */
+    private boolean spell;
 
     // TODO (fixed) finish writing comment
     /**
@@ -30,11 +37,14 @@ public abstract class Effect
      *            the name of the effect
      * @param speed
      *            the speed of the effect
+     * @param type 
      */
-    public Effect(String name, int speed)
+    public Effect(String name, int speed, int type, boolean spell)
     {
         this.name = name;
         this.speed = speed;
+        this.type = type;
+        this.spell = spell;
     }
 
     
@@ -63,9 +73,18 @@ public abstract class Effect
      * 
      * @return the boolean aggressive
      */
-    public boolean getAggressive()
+    public int getType()
     {
-        return this.aggressive;
+        return this.type;
+    }
+    
+    /**
+     * To know if this is a spell
+     * @return if this is a spell
+     */
+    public boolean getSpell()
+    {
+        return this.spell;
     }
   
 

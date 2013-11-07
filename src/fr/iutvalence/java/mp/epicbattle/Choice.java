@@ -9,11 +9,6 @@ package fr.iutvalence.java.mp.epicbattle;
 public class Choice
 {
     /**
-     * The warrior targeted by the effect
-     */
-    private Warrior warrior;
-
-    /**
      * The effect used by the player
      */
     private Effect effect;
@@ -23,13 +18,10 @@ public class Choice
      * 
      * @param effect
      *            The effect used by the player
-     * @param warrior
-     *            The warrior targeted by the effect
      */
-    public Choice(Effect effect, Warrior warrior)
+    public Choice(Effect effect)
     {
         this.effect = effect;
-        this.warrior = warrior;
 
     }
 
@@ -41,5 +33,14 @@ public class Choice
     public int getSpeed()
     {
         return this.effect.getSpeed();
+    }
+    
+    /**
+     * To know the choice chosen
+     * @return the effect of the choice
+     */
+    public Effect getEffect()
+    {
+        return this.effect;
     }
 }

@@ -116,5 +116,10 @@ public class Warrior
     {
         return this.hp;
     }
+    
+    public int getStrength()
+    {
+        return this.strength;
+    }
 
 }

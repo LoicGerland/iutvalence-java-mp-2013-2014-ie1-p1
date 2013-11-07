@@ -54,13 +54,7 @@ public class Main
 
         Game = new Battle(J1, CONAN, AXEMAN1, J2, CONAN, AXEMAN2);
 
-        System.out.println(AXEMAN1.getHp());
-        CONAN.getSpell().application(15, AXEMAN1);
-        System.out.println(AXEMAN1.getHp());
-        System.out.println(Game.getPlayer(0).getWarrior().getHp());
-        System.out.println(Game.getPlayer(1).getWarrior().getHp());
-        Game.getPlayer(0).getChoice(AXEMAN2);
-        System.out.println(AXEMAN2.getHp());
+
     }
 
 }

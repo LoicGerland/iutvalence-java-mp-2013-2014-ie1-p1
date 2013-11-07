@@ -58,7 +58,6 @@ public class Battle
      */
     public void play(String name1, Heros hero1, Warrior warrior1, String name2, Heros hero2, Warrior warrior2)
     {
-        Player activePlayer = players[1];
         int numberOfCurrentTurn = 1;
         new Battle(name1,hero1,warrior1,name2,hero2,warrior2);
         while (numberOfCurrentTurn<100)
@@ -73,93 +72,71 @@ public class Battle
      */
     private void doTheTurn()
     {
-        int speedP1 = 0;
-        int speedP2 = 0;
+        this.players[0].doChoice();
+        this.players[1].doChoice();
         applyPassives();
 
         // The player choose what they want to do
         // Their speeds depending of what they do
-        speedP1 = play(1);
-        speedP2 = play(2);
         // Who does he play at first ?
         // If the speeds are the same, the player 1 get the first move
-        if (speedP2 > speedP1)
+        if (this.players[0].getChoice().getSpeed()>= this.players[1].getChoice().getSpeed())
         {
-            executeChoice(2);
+            executeChoice(0);
             executeChoice(1);
         }
         else
         {
             executeChoice(1);
-            executeChoice(2);
+            executeChoice(0);
         }
     }
 
     /**
-     * The player choose what he wants to do. His speed depends on this.
-     * 
-     * @param playerNumber
-     *            index of the player : player one or player two.
-     * @return the player Speed of the player's action
+     * Execute the choice of the player
+     * @param num the num of the player
      */
-    private int aPlayerPlay(int playerNumber)
+    private void executeChoice(int num)
     {
-        int choice = 1;
-        int speed = 0;
-        /*
-         * Two solution The player 2 plays / the player 1 doesn't play If the
-         * turn is uneven : The player 2 doesn't play / the player 2 plays.
-         */
-        this.activePlayer = this.players[playerNumber];
-        this.passivePlayer = this.players[(playerNumber + 1) % 2];
-        // TODO The user chooses an action
-        // choice = chooseAction();
-        // He attacks with his warrior
-
-        this.dataChoices[playerNumber] = choice;
-
-        if (choice == 1)
+        // The aggressive choice
+        if (this.players[num].getChoice().getEffect().getType()==0)
         {
-            speed = attackSpeed();
+            this.players[num].getChoice().getEffect().application(this.players[num].getWarrior().getStrength(),this.players[num+1%2].getWarrior());       
         }
-        // He uses a spell
-        if (choice == 2)
+        // The defensive choice
+        if (this.players[num].getChoice().getEffect().getType()==1)
         {
-            speed = useSpellSpeed();
+            this.players[num].getChoice().getEffect().application(this.players[num].getWarrior());
         }
-        // He changes warrior
-        // The slowest move of the game.
-        if (choice == 3)
+        // The swapping choice
+        if (this.players[num].getChoice().getEffect().getType()==2)
         {
-            speed = 0;
+            //At the moment, the players have just one warrior. The swap is useless.
         }
-        return speed;
     }
-
+    
     /**
-     * It applies the two passives at beginning of each turn
+     * This method apply the passives of the heroes
      */
     private void applyPassives()
     {
-        // We apply the passive of the player 1
-        if (this.players[0].getHero().getPassive().getAggressive())
+        int num;
+        for(num=0;num<2;num=num+1)
         {
-            this.players[0].getHero().applyPassive(this.players[1].getWarrior());
-        }
-        else
-        {
-            this.players[0].getHero().applyPassive(this.players[0].getWarrior());
-        }
-        // We apply the passive of the player 2
-        if (this.players[1].getHero().getPassive().getAggressive())
-        {
-            this.players[1].getHero().applyPassive(this.players[0].getWarrior());
-        }
-        else
-        {
-            this.players[1].getHero().applyPassive(this.players[1].getWarrior());
+            // The aggressive choice
+            if (this.players[num].getHero().getPassive().getType()==0)
+            {
+                this.players[num].getHero().getPassive().application(this.players[num+1%2].getWarrior());       
+            }
+            // The defensive choice
+            if (this.players[num].getHero().getPassive().getType()==1)
+            {
+                this.players[num].getHero().getPassive().application(this.players[num].getWarrior());
+            }
         }
     }
+    
+    
 
     /**
      * This method return the player 1 or 2
@@ -172,4 +149,6 @@ public class Battle
     {
         return this.players[i];
     }
+    
+    
 }

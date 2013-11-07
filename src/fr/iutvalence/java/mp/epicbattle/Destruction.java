@@ -13,7 +13,7 @@ public class Destruction extends Effect
 
     // TODO (fixed) detail comment (how is the object created?)
     /**
-     * It an effect which allows a warrior or an hero to attack an other warrior.
+     * It an effect which allows a warrior to attack an other warrior.
      * 
      * @param name
      *            the name of the damage effect
@@ -24,7 +24,7 @@ public class Destruction extends Effect
      */
     public Destruction(String name, int speed, int damage)
     {
-        super(name, speed);
+        super(name, speed,0,false);
         this.damage = damage;
     }
 

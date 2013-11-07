@@ -24,6 +24,7 @@ public class Player
 
     // TODO (fixed) write comment
     // TODO (fixed) this field looks like a local variable
+    private Choice choice;
 
     /**
      * This constructor creates the player with the hero chosen
@@ -63,18 +64,23 @@ public class Player
     }
 
     /**
-     * If the player chose to attack with the warrior, this method will save the
-     * choice
-     * 
-     * @param warrior
-     *            the warrior target
-     * @return the choice of the player
+     * The player choices what he wants to do.
      */
     // TODO (fixed) this method should return the choice
-    public Choice getChoice(Warrior warrior)
-    {
-        return new Choice(this.warriorChosen.getAttack(), warrior);
+    public Choice doChoice()   
+    {  
+        this.choice = new Choice(effect);
     }
     
+    /**
+     * To know the choice of the player
+     * @return the player's choice
+     */
+    public Choice getChoice()
+    {
+        return this.choice; 
+    }
+    
+   
 
 }
