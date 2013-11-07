@@ -118,10 +118,17 @@ public class Warrior
      * 
      * @param damage
      *            the amount of the damage
+     * @throws DeathWarriorException 
+     *            When the warrior dies  
      */
-    public void applyDamage(int damage)
+    public void applyDamage(int damage) throws DeathWarriorException  
     {
         this.hp = this.hp - damage;
+        if (this.hp <=0)
+        {
+            this.hp=0; throw new DeathWarriorException();
+        }
+            
     }
 
     /**

@@ -51,7 +51,15 @@ public class Destruction extends Effect
     @Override
     public void application(int power, Warrior target)
     {
+        try
+        {
         target.applyDamage(power + this.damage);
-    }
+    
+        }
+        catch (DeathWarriorException e)
+        {
+            
+        }
+    }        
 
 }

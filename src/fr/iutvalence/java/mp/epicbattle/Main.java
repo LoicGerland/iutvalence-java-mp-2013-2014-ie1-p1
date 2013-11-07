@@ -16,7 +16,6 @@ public class Main
      */
     public static void main(@SuppressWarnings("javadoc") String[] args)
     {
-
         String J1 = "J1";
         String J2 = "J2";
         Battle Game;
@@ -26,8 +25,6 @@ public class Main
         Game.play();
         System.out.println(Game.getPlayer(0).getWarrior().getHp());        
         System.out.println(Game.getPlayer(1).getWarrior().getHp());
-
-
     }
 
 }
