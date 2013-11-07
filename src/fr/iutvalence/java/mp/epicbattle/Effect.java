@@ -7,6 +7,11 @@ package fr.iutvalence.java.mp.epicbattle;
  */
 public abstract class Effect
 {
+    // Spells
+
+    
+
+    
     /**
      * Name of the effect
      */
@@ -37,7 +42,10 @@ public abstract class Effect
      *            the name of the effect
      * @param speed
      *            the speed of the effect
-     * @param type 
+     * @param type
+     *            the type of the spell
+     * @param spell 
+     *            spell or attack
      */
     public Effect(String name, int speed, int type, boolean spell)
     {

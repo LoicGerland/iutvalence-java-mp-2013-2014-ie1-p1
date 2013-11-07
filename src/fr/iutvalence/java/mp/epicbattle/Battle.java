@@ -49,18 +49,11 @@ public class Battle
 
     /**
      * This method launchs the game 
-     * @param name1 the name of the player 1 
-     * @param hero1 the hero of the player 1 
-     * @param warrior1 the warrior of the player 1 
-     * @param name2 the name of the player 2
-     * @param hero2 the hero of the player 2 
-     * @param warrior2 the warrior of the player 2 
      */
-    public void play(String name1, Heros hero1, Warrior warrior1, String name2, Heros hero2, Warrior warrior2)
+    public void play()
     {
-        int numberOfCurrentTurn = 1;
-        new Battle(name1,hero1,warrior1,name2,hero2,warrior2);
-        while (numberOfCurrentTurn<100)
+        int numberOfCurrentTurn = 0;
+        while (numberOfCurrentTurn<1)
         {
             doTheTurn();
             numberOfCurrentTurn = numberOfCurrentTurn + 1;
@@ -72,10 +65,10 @@ public class Battle
      */
     private void doTheTurn()
     {
-        this.players[0].doChoice();
-        this.players[1].doChoice();
-        applyPassives();
 
+        applyPassives();
+        this.players[0].doChoice(Destruction.AXBLOW);
+        this.players[1].doChoice(Heal.AXHEAL);
         // The player choose what they want to do
         // Their speeds depending of what they do
         // Who does he play at first ?
@@ -84,11 +77,13 @@ public class Battle
         {
             executeChoice(0);
             executeChoice(1);
+
         }
         else
         {
             executeChoice(1);
             executeChoice(0);
+
         }
     }
 
@@ -98,22 +93,42 @@ public class Battle
      */
     private void executeChoice(int num)
     {
-        // The aggressive choice
-        if (this.players[num].getChoice().getEffect().getType()==0)
+        // Spell
+        if (this.players[num].getChoice().getEffect().getSpell())
         {
-            this.players[num].getChoice().getEffect().application(this.players[num].getWarrior().getStrength(),this.players[num+1%2].getWarrior());       
+            // The aggressive choice
+            if (this.players[num].getChoice().getEffect().getType()==0)
+            {
+                this.players[num].getChoice().getEffect().application(0,this.players[(num+1)%2].getWarrior());       
+            }
+            // The defensive choice
+            if (this.players[num].getChoice().getEffect().getType()==1)
+            {
+                this.players[num].getChoice().getEffect().application(0,this.players[num].getWarrior());   
+            }
+
         }
-        // The defensive choice
-        if (this.players[num].getChoice().getEffect().getType()==1)
+        //Attack
+        else
         {
-            this.players[num].getChoice().getEffect().application(this.players[num].getWarrior());
-        }
-        // The swapping choice
-        if (this.players[num].getChoice().getEffect().getType()==2)
-        {
+         // The aggressive choice
+            if (this.players[num].getChoice().getEffect().getType()==0)
+            {
+                this.players[num].getChoice().getEffect().application(this.players[num].getWarrior().getStrength(),this.players[(num+1)%2].getWarrior());       
+            }
+            // The defensive choice
+            if (this.players[num].getChoice().getEffect().getType()==1)
+            {
+                this.players[num].getChoice().getEffect().application(this.players[num].getWarrior().getIntelligence(),this.players[num].getWarrior());
+            }
+            // The swapping choice
+            if (this.players[num].getChoice().getEffect().getType()==2)
+            {
             //At the moment, the players have just one warrior. The swap is useless.
+            }
         }
     }
+    
     
     /**
      * This method apply the passives of the heroes
@@ -121,17 +136,17 @@ public class Battle
     private void applyPassives()
     {
         int num;
-        for(num=0;num<2;num=num+1)
+        for(num=0;num<=1;num=num+1)
         {
             // The aggressive choice
             if (this.players[num].getHero().getPassive().getType()==0)
             {
-                this.players[num].getHero().getPassive().application(this.players[num+1%2].getWarrior());       
+                this.players[num].getHero().getPassive().application(0,this.players[(num+1)%2].getWarrior());       
             }
             // The defensive choice
             if (this.players[num].getHero().getPassive().getType()==1)
             {
-                this.players[num].getHero().getPassive().application(this.players[num].getWarrior());
+                this.players[num].getHero().getPassive().application(0,this.players[num].getWarrior());
             }
         }
     }

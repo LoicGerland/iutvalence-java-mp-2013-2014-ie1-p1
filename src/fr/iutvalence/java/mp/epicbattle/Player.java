@@ -24,6 +24,9 @@ public class Player
 
     // TODO (fixed) write comment
     // TODO (fixed) this field looks like a local variable
+    /**
+     * The choice of the player
+     */
     private Choice choice;
 
     /**
@@ -65,10 +68,11 @@ public class Player
 
     /**
      * The player choices what he wants to do.
+     * @param effect The action chosen
      */
     // TODO (fixed) this method should return the choice
-    public Choice doChoice()   
-    {  
+    public void doChoice(Effect effect)   
+    {   
         this.choice = new Choice(effect);
     }
     
@@ -81,6 +85,12 @@ public class Player
         return this.choice; 
     }
     
-   
+    /**
+     * @return The name of the player
+     */
+public String getName()
+   {
+       return this.name;
+   }
 
 }

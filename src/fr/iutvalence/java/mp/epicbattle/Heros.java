@@ -9,6 +9,12 @@ package fr.iutvalence.java.mp.epicbattle;
 
 public class Heros
 {
+    // Heroes
+    /**
+     * Conan is an offensive hero.
+     */
+    public final static Heros CONAN = new Heros("Conan", Destruction.YELL, Destruction.BARBARIANKARMA);
+    
     /**
      * The name of the Heros
      */
@@ -52,7 +58,7 @@ public class Heros
      */
     public void useSpell(Warrior target)
     {
-        this.spell.application(target);
+        this.spell.application(0,target);
     }
 
     /**
@@ -63,7 +69,7 @@ public class Heros
      */
     public void applyPassive(Warrior target)
     {
-        this.passivePower.application(target);
+        this.passivePower.application(0,target);
     }
 
     
