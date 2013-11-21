@@ -6,7 +6,7 @@ package fr.iutvalence.java.mp.epicbattle;
  * @author GERLAND KAYRAK
  * 
  */
-// TODO (fix) this class should only have one public method, which starts and
+// TODO (fixed) this class should only have one public method, which starts and
 // play the whole game
 public class Battle
 {
@@ -15,7 +15,7 @@ public class Battle
      * The players which will play the battle.
      */
     private Player[] players;
-
+    
     /**
      * This constructor creates a battle between two players. It also assigns a
      * hero to each players.
@@ -59,24 +59,45 @@ public class Battle
      */
     private void doTheTurn()
     {
-
+        System.out.println(this.getPlayer(0).getHero().getName()+" "+this.getPlayer(0).getWarrior().getName()+" "+this.getPlayer(0).getWarrior().getHp()+"HP");   
+        System.out.println(this.getPlayer(1).getHero().getName()+" "+this.getPlayer(1).getWarrior().getName()+" "+this.getPlayer(1).getWarrior().getHp()+"HP");   
+        
         applyPassives();
-        this.players[0].doChoice(Destruction.AXBLOW);
-        this.players[1].doChoice(Heal.AXHEAL);
         // The player choose what they want to do
         // Their speeds depending of what they do
         // Who does he play at first ?
         // If the speeds are the same, the player 1 get the first move
-        if (this.players[0].getChoice().getSpeed()>= this.players[1].getChoice().getSpeed())
+        Effect[] listChoices1;
+        listChoices1 = new Effect [5];
+        listChoices1[0] = this.players[0].getHero().getSpell(); 
+        listChoices1[1] = this.players[0].getWarrior().getAttack();
+        Effect[] listChoices2;
+        listChoices2 = new Effect [5];
+        listChoices2[0] = this.players[1].getHero().getSpell(); 
+        listChoices2[1] = this.players[1].getWarrior().getAttack();
+        
+        Choice[] choiceP;
+        choiceP = new Choice[2];
+        
+        choiceP[0] = this.players[0].getChoice(listChoices1);
+        choiceP[1] = this.players[1].getChoice(listChoices2);
+        
+        if (choiceP[0].getSpeed() >= choiceP[1].getSpeed())
         {
-            executeChoice(0);
-            executeChoice(1);
+            executeChoice(0,choiceP[0]);
+            if (this.players[1].getWarrior().getHp()>0)
+                executeChoice(1,choiceP[1]);
+            System.out.println(this.getPlayer(0).getHero().getName()+" "+this.getPlayer(0).getWarrior().getName()+" "+this.getPlayer(0).getWarrior().getHp()+"HP");        
+            System.out.println(this.getPlayer(1).getHero().getName()+" "+this.getPlayer(1).getWarrior().getName()+" "+this.getPlayer(1).getWarrior().getHp()+"HP");   
 
         }
         else
         {
-            executeChoice(1);
-            executeChoice(0);
+            executeChoice(1,choiceP[1]);
+            if (this.players[0].getWarrior().getHp()>0)
+                executeChoice(0,choiceP[0]);
+            System.out.println(this.getPlayer(0).getHero().getName()+this.getPlayer(0).getWarrior().getName()+this.getPlayer(0).getWarrior().getHp()+"HP");           
+            System.out.println(this.getPlayer(1).getHero().getName()+this.getPlayer(1).getWarrior().getName()+this.getPlayer(1).getWarrior().getHp()+"HP");   
 
         }
     }
@@ -84,21 +105,22 @@ public class Battle
     /**
      * Execute the choice of the player
      * @param num the num of the player
+     * @param choice The choice of the player
      */
-    private void executeChoice(int num)
+    private void executeChoice(int num, Choice choice)
     {
         // Spell
-        if (this.players[num].getChoice().getEffect().getSpell())
+        if (choice.getEffect().getSpell())
         {
             // The aggressive choice
-            if (this.players[num].getChoice().getEffect().getType()==0)
+            if (choice.getEffect().getType()==Effect.AGGRESSIVE)
             {
-                this.players[num].getChoice().getEffect().application(0,this.players[(num+1)%2].getWarrior());       
+                choice.getEffect().application(0,this.players[(num+1)%2].getWarrior());       
             }
             // The defensive choice
-            if (this.players[num].getChoice().getEffect().getType()==1)
+            if (choice.getEffect().getType()==Effect.DEFENSIVE)
             {
-                this.players[num].getChoice().getEffect().application(0,this.players[num].getWarrior());   
+                choice.getEffect().application(0,this.players[num].getWarrior());   
             }
 
         }
@@ -106,17 +128,17 @@ public class Battle
         else
         {
          // The aggressive choice
-            if (this.players[num].getChoice().getEffect().getType()==0)
+            if (choice.getEffect().getType()==Effect.AGGRESSIVE)
             {
-                this.players[num].getChoice().getEffect().application(this.players[num].getWarrior().getStrength(),this.players[(num+1)%2].getWarrior());       
+                choice.getEffect().application(this.players[num].getWarrior().getStrength(),this.players[(num+1)%2].getWarrior());       
             }
             // The defensive choice
-            if (this.players[num].getChoice().getEffect().getType()==1)
+            if (choice.getEffect().getType()==Effect.DEFENSIVE)
             {
-                this.players[num].getChoice().getEffect().application(this.players[num].getWarrior().getIntelligence(),this.players[num].getWarrior());
+                choice.getEffect().application(this.players[num].getWarrior().getIntelligence(),this.players[num].getWarrior());
             }
             // The swapping choice
-            if (this.players[num].getChoice().getEffect().getType()==2)
+            if (choice.getEffect().getType()==Effect.SWAP)
             {
             //At the moment, the players have just one warrior. The swap is useless.
             }
@@ -133,12 +155,12 @@ public class Battle
         for(num=0;num<=1;num=num+1)
         {
             // The aggressive choice
-            if (this.players[num].getHero().getPassive().getType()==0)
+            if (this.players[num].getHero().getPassive().getType()==Effect.AGGRESSIVE)
             {
                 this.players[num].getHero().getPassive().application(0,this.players[(num+1)%2].getWarrior());       
             }
             // The defensive choice
-            if (this.players[num].getHero().getPassive().getType()==1)
+            if (this.players[num].getHero().getPassive().getType()==Effect.DEFENSIVE)
             {
                 this.players[num].getHero().getPassive().application(0,this.players[num].getWarrior());
             }
@@ -154,7 +176,7 @@ public class Battle
      *            the number of the player
      * @return the player 1 or 2
      */
-    public Player getPlayer(int i)
+    private Player getPlayer(int i)
     {
         return this.players[i];
     }

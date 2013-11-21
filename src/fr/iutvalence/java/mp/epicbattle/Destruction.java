@@ -28,9 +28,10 @@ public class Destruction extends Effect
      */
     private int damage;
 
-    // TODO (fix) detail comment (how is the object created?)
+    // TODO (fixed) detail comment (how is the object created?)
     /**
      * It an effect which allows a warrior to attack an other warrior.
+     * The object will be created as constants, which can be choice by the player.
      * 
      * @param name
      *            the name of the damage effect
@@ -41,7 +42,7 @@ public class Destruction extends Effect
      */
     public Destruction(String name, int speed, int damage)
     {
-        super(name, speed,0,false);
+        super(name, speed,Effect.AGGRESSIVE,false);
         this.damage = damage;
     }
 

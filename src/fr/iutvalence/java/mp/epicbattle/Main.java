@@ -18,12 +18,9 @@ public class Main
         String J1 = "J1";
         String J2 = "J2";
         Battle game;
-        game = new Battle(J1, Heros.CONAN, Warrior.AXEMAN1, J2, Heros.CONAN, Warrior.AXEMAN2);
-        System.out.println(game.getPlayer(0).getWarrior().getHp());
-        System.out.println(game.getPlayer(1).getWarrior().getHp()); 
+        game = new Battle(J1, Heros.CONAN, Warrior.AXEMAN1, J2, Heros.CONAN, Warrior.AXEMAN2); 
         game.play();
-        System.out.println(game.getPlayer(0).getWarrior().getHp());        
-        System.out.println(game.getPlayer(1).getWarrior().getHp());
+
     }
 
 }

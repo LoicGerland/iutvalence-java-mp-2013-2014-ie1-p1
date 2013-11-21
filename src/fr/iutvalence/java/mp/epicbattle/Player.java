@@ -1,5 +1,5 @@
 package fr.iutvalence.java.mp.epicbattle;
-
+import java.util.Scanner;
 /**
  * @author Kayrak Gerland The class player defines one of the two opponents of
  *         the battle. It is compounded of the name of the player and the heros
@@ -22,11 +22,7 @@ public class Player
      */
     private Warrior warriorChosen;
 
-    // TODO (fix) redeclare this field as a local variable
-    /**
-     * The choice of the player
-     */
-    private Choice choice;
+
 
     /**
      * This constructor creates the player with the hero chosen
@@ -66,22 +62,24 @@ public class Player
     }
 
     /**
-     * The player choices what he wants to do.
-     * @param effect The action chosen
-     */
-    // TODO (fix) this method should return the choice
-    public void doChoice(Effect effect)   
-    {   
-        this.choice = new Choice(effect);
-    }
-    
-    /**
      * To know the choice of the player
+     * @param listChoice 
+     *              A List of all the Effect of the game
      * @return the player's choice
      */
-    public Choice getChoice()
+    public Choice getChoice(Effect[] listChoice)
     {
-        return this.choice; 
+        int x;
+        Choice choice = null;
+        Scanner sc = new Scanner(System.in);
+        for ( x=0;x<2;x++)
+        {
+        System.out.println(x+" "+listChoice[x].getName());
+        }
+        System.out.println("Veuillez le numéro de votre choix:");
+        int i = sc.nextInt();
+        choice = new Choice(listChoice[i]);
+        return choice; 
     }
     
     /**

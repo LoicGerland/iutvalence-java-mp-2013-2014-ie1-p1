@@ -19,27 +19,41 @@ public abstract class Effect
     private int speed;
 
     /**
+     * The type of the effect
+     */
+    // TODO (fixed) declare related constants here
+    private int type; 
+    
+    /**
      * 0/aggressive/an effect which is applied on the enemy warrior
+     */
+    public final static int AGGRESSIVE = 0 ;
+    
+    /**
      * 1/defensive/an effect which is applied on the warrior played
+     */
+    public final static int DEFENSIVE = 1 ;
+    
+    /**
      * 2/swap/an effect which allows to swap warrior played
      */
-    // TODO (fix) declare related constants here
-    private int type;
+    public final static int SWAP = 3 ;
     
     /**
      * Is it the hero which will use the effect ?
      */
     private boolean spell;
 
-    // TODO (fix) finish writing comment (global description is missing)
+    // TODO (fixed) finish writing comment (global description is missing)
     /**
+     * This is the super constructor of all the Spells and Attacks of the game.
      * 
      * @param name
      *            the name of the effect
      * @param speed
      *            the speed of the effect
      * @param type
-     *            the type of the spell
+     *            the type of the spell (aggressive or not, swap ?)
      * @param spell 
      *            spell or attack
      */

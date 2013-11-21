@@ -16,9 +16,10 @@ public class Heal extends Effect
      */
     private int regeneration;
 
-    // TODO (fix) detail comment (how is the object created?)
+    // TODO (fixed) detail comment (how is the object created?)
     /**
      * It an effect which allows a warrior to attack an other warrior.
+     * The object will be created as constants, which can be choice by the player.
      * 
      * @param name
      *            the name of the damage effect
@@ -29,7 +30,7 @@ public class Heal extends Effect
      */
     public Heal(String name, int speed, int regeneration)
     {
-        super(name, speed,1,true);
+        super(name, speed,Effect.DEFENSIVE,true);
         this.regeneration = regeneration;
     }
 
