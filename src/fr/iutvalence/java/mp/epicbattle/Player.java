@@ -76,7 +76,7 @@ public class Player
         {
         System.out.println(x+" "+listChoice[x].getName());
         }
-        System.out.println("Veuillez le numéro de votre choix:");
+        System.out.println("Veuillez entrez le numéro de votre choix:");
         int i = sc.nextInt();
         choice = new Choice(listChoice[i]);
         return choice; 
