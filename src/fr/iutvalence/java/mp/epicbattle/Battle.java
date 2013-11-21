@@ -6,9 +6,8 @@ package fr.iutvalence.java.mp.epicbattle;
  * @author GERLAND KAYRAK
  * 
  */
-// TODO (fixed) this class should only have one public method, which starts and
-// play
-// the whole game
+// TODO (fix) this class should only have one public method, which starts and
+// play the whole game
 public class Battle
 {
 
@@ -16,11 +15,6 @@ public class Battle
      * The players which will play the battle.
      */
     private Player[] players;
-
-    // TODO (fixed) the two following fields look like local variable
-
-    // TODO (fixed) the following field looks like local variable
-
 
     /**
      * This constructor creates a battle between two players. It also assigns a
@@ -59,7 +53,7 @@ public class Battle
             numberOfCurrentTurn = numberOfCurrentTurn + 1;
         }
     }
-    // TODO (fixed) should be private
+    
     /**
      * The execution of a turn
      */

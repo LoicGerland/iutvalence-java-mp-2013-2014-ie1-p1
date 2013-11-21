@@ -22,8 +22,7 @@ public class Player
      */
     private Warrior warriorChosen;
 
-    // TODO (fixed) write comment
-    // TODO (fixed) this field looks like a local variable
+    // TODO (fix) redeclare this field as a local variable
     /**
      * The choice of the player
      */
@@ -70,7 +69,7 @@ public class Player
      * The player choices what he wants to do.
      * @param effect The action chosen
      */
-    // TODO (fixed) this method should return the choice
+    // TODO (fix) this method should return the choice
     public void doChoice(Effect effect)   
     {   
         this.choice = new Choice(effect);

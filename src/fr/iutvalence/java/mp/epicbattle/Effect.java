@@ -8,14 +8,9 @@ package fr.iutvalence.java.mp.epicbattle;
 public abstract class Effect
 {
     // Spells
-
-    
-
-    
     /**
      * Name of the effect
      */
-    // TODO (fixed) it lacks a getter for this field
     private String name;
 
     /**
@@ -28,6 +23,7 @@ public abstract class Effect
      * 1/defensive/an effect which is applied on the warrior played
      * 2/swap/an effect which allows to swap warrior played
      */
+    // TODO (fix) declare related constants here
     private int type;
     
     /**
@@ -35,7 +31,7 @@ public abstract class Effect
      */
     private boolean spell;
 
-    // TODO (fixed) finish writing comment
+    // TODO (fix) finish writing comment (global description is missing)
     /**
      * 
      * @param name

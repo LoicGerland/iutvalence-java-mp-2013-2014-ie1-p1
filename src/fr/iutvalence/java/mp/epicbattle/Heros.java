@@ -18,7 +18,6 @@ public class Heros
     /**
      * The name of the Heros
      */
-    // TODO (fixed) it lacks a getter for this field
     private String name;
 
     /**

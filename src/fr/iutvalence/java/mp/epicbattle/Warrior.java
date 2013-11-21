@@ -17,7 +17,6 @@ public class Warrior
     /**
      * The name of the warrior's class. (ex : spearman, wizard)
      */
-    // TODO (fixed) it lacks a getter for this field
     private String name;
 
     /**

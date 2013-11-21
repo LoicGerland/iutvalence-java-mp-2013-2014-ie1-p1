@@ -16,7 +16,7 @@ public class Heal extends Effect
      */
     private int regeneration;
 
-    // TODO (fixed) detail comment (how is the object created?)
+    // TODO (fix) detail comment (how is the object created?)
     /**
      * It an effect which allows a warrior to attack an other warrior.
      * 
