@@ -48,7 +48,7 @@ public class Heros
         this.spell = spell;
     }
 
-    // TODO (think bout it) the way you manage spells is somewhat strange
+    // TODO (think about it) the way you manage spells is somewhat strange
     /**
      * Use a spell against a warrior
      * 

@@ -7,22 +7,6 @@ package fr.iutvalence.java.mp.epicbattle;
  */
 public abstract class Effect
 {
-    // Spells
-    /**
-     * Name of the effect
-     */
-    private String name;
-
-    /**
-     * The speed of the effect
-     */
-    private int speed;
-
-    /**
-     * The type of the effect
-     */
-    // TODO (fixed) declare related constants here
-    private int type; 
     
     /**
      * 0/aggressive/an effect which is applied on the enemy warrior
@@ -39,12 +23,28 @@ public abstract class Effect
      */
     public final static int SWAP = 3 ;
     
+    // Spells
+    /**
+     * Name of the effect
+     */
+    private String name;
+
+    /**
+     * The speed of the effect
+     */
+    private int speed;
+
+    /**
+     * The type of the effect
+     */
+    private int type; 
+    
     /**
      * Is it the hero which will use the effect ?
      */
     private boolean spell;
 
-    // TODO (fixed) finish writing comment (global description is missing)
+    // TODO (fix) detail comment
     /**
      * This is the super constructor of all the Spells and Attacks of the game.
      * 

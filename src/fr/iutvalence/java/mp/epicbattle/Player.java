@@ -76,6 +76,8 @@ public class Player
         {
         System.out.println(x+" "+listChoice[x].getName());
         }
+        // TODO (fix) separate (in separate classes) the way you display messages to the user from
+        // the way you take input frome the user 
         System.out.println("Veuillez entrez le numéro de votre choix:");
         int i = sc.nextInt();
         choice = new Choice(listChoice[i]);

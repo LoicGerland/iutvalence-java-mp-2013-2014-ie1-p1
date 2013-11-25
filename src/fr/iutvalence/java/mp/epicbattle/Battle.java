@@ -6,8 +6,6 @@ package fr.iutvalence.java.mp.epicbattle;
  * @author GERLAND KAYRAK
  * 
  */
-// TODO (fixed) this class should only have one public method, which starts and
-// play the whole game
 public class Battle
 {
 
@@ -76,12 +74,12 @@ public class Battle
         listChoices2[0] = this.players[1].getHero().getSpell(); 
         listChoices2[1] = this.players[1].getWarrior().getAttack();
         
-        Choice[] choiceP;
-        choiceP = new Choice[2];
+        Choice[] choiceP = new Choice[2];
         
         choiceP[0] = this.players[0].getChoice(listChoices1);
         choiceP[1] = this.players[1].getChoice(listChoices2);
         
+        // TODO (fix) avoid if/else here
         if (choiceP[0].getSpeed() >= choiceP[1].getSpeed())
         {
             executeChoice(0,choiceP[0]);
