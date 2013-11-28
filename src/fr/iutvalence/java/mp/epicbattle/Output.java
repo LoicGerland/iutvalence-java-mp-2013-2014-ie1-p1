@@ -14,13 +14,26 @@ public class Output
     public static void displayAttacks(Effect[] listChoices)
     {
         int i;
-        for ( i=0;i<2;i++)
+        for ( i=0;i<3;i++)
         {
             System.out.println(i+". "+listChoices[i].getName());
         }
  
     }
     
+    /**
+     * It displays the warriors of the player
+     * @param listChoices list of his choices
+     */
+    public static void displayWarriors(Warrior[] listWarriors)
+    {
+        int i;
+        for ( i=0;i<2;i++)
+        {
+            System.out.println(i+". "+listWarriors[i].getName());
+        }
+ 
+    }
     
     /**
      * It displays The Heroes,the Warriors playing and their HP

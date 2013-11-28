@@ -11,8 +11,12 @@ public class Warrior
      * Axeman is a barbarian warrior.
      */
     public final static Warrior AXEMAN1 = new Warrior("Axeman1", 10, 30, 10, 10, Destruction.AXBLOW);
+    
+    public final static Warrior SPEARMAN1 = new Warrior("Spearman", 5, 50, 200, 15, Destruction.SPEARBLOW);
     @SuppressWarnings("javadoc")
     public final static Warrior AXEMAN2 = new Warrior("Axeman2", 10, 30, 10, 10, Destruction.AXBLOW);
+    
+    public final static Warrior BUISNESSMAN = new Warrior ("Buisnessman", 5, 1000, 5, 2, Destruction.YELL);
     
     /**
      * The name of the warrior's class. (ex : spearman, wizard)

@@ -41,11 +41,11 @@ public class Battle
      *            The warrior he chose
      */
 
-    public Battle(String name1, Heros hero1, Warrior warrior1, String name2, Heros hero2, Warrior warrior2)
+    public Battle(String name1, Heros hero1, Warrior[] listWarriors1, String name2, Heros hero2, Warrior[] listWarriors2)
     {
         this.players = new Player[2];
-        this.players[0] = new Player(name1, hero1, warrior1);
-        this.players[1] = new Player(name2, hero2, warrior2);
+        this.players[0] = new Player(name1, hero1, listWarriors1);
+        this.players[1] = new Player(name2, hero2, listWarriors2);
     }
 
     /**
@@ -78,10 +78,14 @@ public class Battle
         listChoices1 = new Effect [5];
         listChoices1[0] = this.players[PLY1].getHero().getSpell(); 
         listChoices1[1] = this.players[PLY1].getWarrior().getAttack();
+        listChoices1[2] = Swap.SWAP;
         Effect[] listChoices2;
         listChoices2 = new Effect [5];
         listChoices2[0] = this.players[PLY2].getHero().getSpell(); 
         listChoices2[1] = this.players[PLY2].getWarrior().getAttack();
+        listChoices2[2] = Swap.SWAP;
+        
+      
         
         Choice[] choiceP = new Choice[2];
         
@@ -110,14 +114,13 @@ public class Battle
         {
             // The aggressive choice
             if (choice.getEffect().getType()==Effect.AGGRESSIVE)
-            {
                 choice.getEffect().application(0,this.players[(num+1)%2].getWarrior());       
-            }
             // The defensive choice
             if (choice.getEffect().getType()==Effect.DEFENSIVE)
-            {
-                choice.getEffect().application(0,this.players[num].getWarrior());   
-            }
+                choice.getEffect().application(0,this.players[num].getWarrior());
+            //The Swap choice
+            if (choice.getEffect().getType()==Effect.SWAP)
+                this.players[num].changeWarrior();
 
         }
         //Attack

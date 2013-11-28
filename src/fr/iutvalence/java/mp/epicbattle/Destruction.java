@@ -21,6 +21,12 @@ public class Destruction extends Effect
      * Ax Blow is the basic attack of the axeman.
      */
     public final static Effect AXBLOW = new Destruction("Ax Blow", 5, 10);
+    
+    
+    /**
+     * 
+     */
+    public final static Effect SPEARBLOW = new Destruction("Ax Blow", 1, 15);
       
     
     /**

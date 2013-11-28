@@ -22,6 +22,10 @@ public class Player
      */
     private Warrior warriorChosen;
 
+    /**
+     * All player's warriors
+     */
+    private Warrior[] listWarriors;
 
 
     /**
@@ -34,11 +38,12 @@ public class Player
      * @param warriorChosen
      *            The warrior chosen by the player
      */
-    public Player(String name, Heros heroChosen, Warrior warriorChosen)
+    public Player(String name, Heros heroChosen, Warrior[] listWarriors)
     {
         this.name = name;
         this.heroChosen = heroChosen;
-        this.warriorChosen = warriorChosen;
+        this.listWarriors = listWarriors;
+        this.warriorChosen = listWarriors[0];
     }
 
     /**
@@ -75,8 +80,28 @@ public class Player
         // TODO (fixed) separate (in separate classes) the way you display messages to the user from
         // the way you take input from the user 
         i = Input.getPlayerChoice();
+        if (i == 3)
+        {
+            int j;
+            Output.displayWarriors(this.listWarriors);
+            choice.getEffect().chooseWarrior() = Input.getPlayerChoice();
+        }
         choice = new Choice(listChoices[i]);
         return choice; 
+    }
+    
+    /**
+     * It checks the validity of the swap.
+     * @param numW the index of the warrior
+     * @param numP the index of the player
+     * @return
+     * @throws SameWarriorException if the Warrior select it the same
+     */
+    public boolean compareWarrior(int numW, int numP) throws SameWarriorException
+    {
+        if (this.warriorChosen==this.listWarriors[numW])
+            throw new SameWarriorException();
+        else return true;
     }
     
     /**
@@ -86,5 +111,10 @@ public String getName()
    {
        return this.name;
    }
+
+    public void changeWarrior(Warrior[] listWarriors)
+    {
+        
+    }
 
 }
