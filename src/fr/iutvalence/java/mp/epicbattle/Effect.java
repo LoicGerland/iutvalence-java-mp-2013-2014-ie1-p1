@@ -44,9 +44,9 @@ public abstract class Effect
      */
     private boolean spell;
 
-    // TODO (fix) detail comment
+    // TODO (fixed) detail comment
     /**
-     * This is the super constructor of all the Spells and Attacks of the game.
+     * This is the super constructor of all the Spells, Attacks and Swaps of the game.
      * 
      * @param name
      *            the name of the effect

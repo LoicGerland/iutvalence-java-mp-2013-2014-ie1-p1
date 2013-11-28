@@ -16,9 +16,10 @@ public class Heal extends Effect
      */
     private int regeneration;
 
-    // TODO (fix) detail comment (to discuss)
+    // TODO (fixed) detail comment (to discuss)
     /**
      * It an effect which allows a warrior to attack an other warrior.
+     * This constructor create a Heal object with a name, a speed and regeneration.
      * The object will be created as constants, which can be choice by the player.
      * 
      * @param name

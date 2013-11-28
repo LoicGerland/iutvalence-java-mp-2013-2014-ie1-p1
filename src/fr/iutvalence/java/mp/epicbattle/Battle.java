@@ -8,6 +8,15 @@ package fr.iutvalence.java.mp.epicbattle;
  */
 public class Battle
 {
+    
+    /**
+     * it defines the index of the player 1 in the table players
+     */
+    public final static int PLY1 = 0;
+    /**
+     * it defines the index of the player 2 in the table players
+     */
+    public final static int PLY2 = 1;
 
     /**
      * The players which will play the battle.
@@ -57,47 +66,36 @@ public class Battle
      */
     private void doTheTurn()
     {
-        System.out.println(this.getPlayer(0).getHero().getName()+" "+this.getPlayer(0).getWarrior().getName()+" "+this.getPlayer(0).getWarrior().getHp()+"HP");   
-        System.out.println(this.getPlayer(1).getHero().getName()+" "+this.getPlayer(1).getWarrior().getName()+" "+this.getPlayer(1).getWarrior().getHp()+"HP");   
-        
+           
+        Output.displayGameState(this.players);
         applyPassives();
         // The player choose what they want to do
         // Their speeds depending of what they do
         // Who does he play at first ?
         // If the speeds are the same, the player 1 get the first move
+
         Effect[] listChoices1;
         listChoices1 = new Effect [5];
-        listChoices1[0] = this.players[0].getHero().getSpell(); 
-        listChoices1[1] = this.players[0].getWarrior().getAttack();
+        listChoices1[0] = this.players[PLY1].getHero().getSpell(); 
+        listChoices1[1] = this.players[PLY1].getWarrior().getAttack();
         Effect[] listChoices2;
         listChoices2 = new Effect [5];
-        listChoices2[0] = this.players[1].getHero().getSpell(); 
-        listChoices2[1] = this.players[1].getWarrior().getAttack();
+        listChoices2[0] = this.players[PLY2].getHero().getSpell(); 
+        listChoices2[1] = this.players[PLY2].getWarrior().getAttack();
         
         Choice[] choiceP = new Choice[2];
         
-        choiceP[0] = this.players[0].getChoice(listChoices1);
-        choiceP[1] = this.players[1].getChoice(listChoices2);
+        choiceP[0] = this.players[PLY1].getChoice(listChoices1);
+        choiceP[1] = this.players[PLY2].getChoice(listChoices2);
         
-        // TODO (fix) avoid if/else here
-        if (choiceP[0].getSpeed() >= choiceP[1].getSpeed())
-        {
-            executeChoice(0,choiceP[0]);
-            if (this.players[1].getWarrior().getHp()>0)
-                executeChoice(1,choiceP[1]);
-            System.out.println(this.getPlayer(0).getHero().getName()+" "+this.getPlayer(0).getWarrior().getName()+" "+this.getPlayer(0).getWarrior().getHp()+"HP");        
-            System.out.println(this.getPlayer(1).getHero().getName()+" "+this.getPlayer(1).getWarrior().getName()+" "+this.getPlayer(1).getWarrior().getHp()+"HP");   
-
-        }
-        else
-        {
-            executeChoice(1,choiceP[1]);
-            if (this.players[0].getWarrior().getHp()>0)
-                executeChoice(0,choiceP[0]);
-            System.out.println(this.getPlayer(0).getHero().getName()+this.getPlayer(0).getWarrior().getName()+this.getPlayer(0).getWarrior().getHp()+"HP");           
-            System.out.println(this.getPlayer(1).getHero().getName()+this.getPlayer(1).getWarrior().getName()+this.getPlayer(1).getWarrior().getHp()+"HP");   
-
-        }
+        // TODO (fixed) avoid if/else here
+        int var = 1;
+        if (choiceP[PLY1].getSpeed() >= choiceP[PLY2].getSpeed())
+            var=0;
+        executeChoice(0,choiceP[(PLY1+var)%2]);     
+        if (this.players[(PLY2+var)%2].getWarrior().getHp()>0)
+            executeChoice((PLY2+var)%2,choiceP[(PLY2+var)%2]);
+        Output.displayGameState(this.players);
     }
 
     /**
