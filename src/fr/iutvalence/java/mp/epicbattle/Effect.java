@@ -44,7 +44,7 @@ public abstract class Effect
      */
     private boolean spell;
 
-    // TODO (fixed) detail comment
+    // TODO (fix) rewrite comment (wrong description)
     /**
      * This is the super constructor of all the Spells, Attacks and Swaps of the game.
      * 

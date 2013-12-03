@@ -12,7 +12,8 @@ public class Input
      * This method is used to get the choice of the player
      * @return the index of the choice in listchoices
      */
-    public static  int getPlayerChoice()
+    // TODO (fix) this should not be static
+    public static int getPlayerChoice()
     {
         Scanner sc = new Scanner(System.in);
         System.out.println("Veuillez entrez le numéro de votre choix:");

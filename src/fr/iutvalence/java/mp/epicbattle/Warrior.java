@@ -12,10 +12,13 @@ public class Warrior
      */
     public final static Warrior AXEMAN1 = new Warrior("Axeman1", 10, 30, 10, 10, Destruction.AXBLOW);
     
+ // TODO (fix) write comment
     public final static Warrior SPEARMAN1 = new Warrior("Spearman", 5, 50, 200, 15, Destruction.SPEARBLOW);
-    @SuppressWarnings("javadoc")
+    
+ // TODO (fix) write comment
     public final static Warrior AXEMAN2 = new Warrior("Axeman2", 10, 30, 10, 10, Destruction.AXBLOW);
     
+ // TODO (fix) write comment
     public final static Warrior BUISNESSMAN = new Warrior ("Buisnessman", 5, 1000, 5, 2, Destruction.YELL);
     
     /**
@@ -47,6 +50,7 @@ public class Warrior
      * The intelligence defines the power of defensive spell
      */
     private int intelligence;
+    
     /**
      * It creates a warrior depending of the parameters.
      * 

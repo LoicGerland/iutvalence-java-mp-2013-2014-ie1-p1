@@ -15,8 +15,7 @@ public class Heal extends Effect
      * The amount of the heal defines the power of the effect.
      */
     private int regeneration;
-
-    // TODO (fixed) detail comment (to discuss)
+    
     /**
      * It an effect which allows a warrior to attack an other warrior.
      * This constructor create a Heal object with a name, a speed and regeneration.

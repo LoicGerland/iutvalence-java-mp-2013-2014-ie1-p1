@@ -12,10 +12,13 @@ public class Battle
     /**
      * it defines the index of the player 1 in the table players
      */
+    // TODO (fix) rename constant
     public final static int PLY1 = 0;
+
     /**
      * it defines the index of the player 2 in the table players
      */
+    // TODO (fix) rename constant
     public final static int PLY2 = 1;
 
     /**
@@ -23,6 +26,7 @@ public class Battle
      */
     private Player[] players;
     
+    // TODO (fix) fix comment (parameters)
     /**
      * This constructor creates a battle between two players. It also assigns a
      * hero to each players.
@@ -40,7 +44,6 @@ public class Battle
      * @param warrior2
      *            The warrior he chose
      */
-
     public Battle(String name1, Heros hero1, Warrior[] listWarriors1, String name2, Heros hero2, Warrior[] listWarriors2)
     {
         this.players = new Player[2];
@@ -92,7 +95,6 @@ public class Battle
         choiceP[0] = this.players[PLY1].getChoice(listChoices1);
         choiceP[1] = this.players[PLY2].getChoice(listChoices2);
         
-        // TODO (fixed) avoid if/else here
         int var = 1;
         if (choiceP[PLY1].getSpeed() >= choiceP[PLY2].getSpeed())
             var=0;
@@ -175,6 +177,7 @@ public class Battle
      *            the number of the player
      * @return the player 1 or 2
      */
+    // TODO (fix) remove this (useless)
     private Player getPlayer(int i)
     {
         return this.players[i];

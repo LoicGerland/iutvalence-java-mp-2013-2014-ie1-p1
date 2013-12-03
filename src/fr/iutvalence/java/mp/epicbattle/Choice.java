@@ -8,6 +8,7 @@ package fr.iutvalence.java.mp.epicbattle;
  */
 public class Choice
 {
+    // TODO (fix) if this class just embeds a effect, why not using Effect instead of Choice ?
     /**
      * The effect used by the player
      */

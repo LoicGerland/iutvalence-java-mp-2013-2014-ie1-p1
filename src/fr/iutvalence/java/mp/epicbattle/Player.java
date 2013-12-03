@@ -76,9 +76,8 @@ public class Player
     {
         int i;
         Choice choice = null;
+        // TODO (fix) Ther should be a separate instance of Output and Input for each Player instance
         Output.displayAttacks(listChoices);
-        // TODO (fixed) separate (in separate classes) the way you display messages to the user from
-        // the way you take input from the user 
         i = Input.getPlayerChoice();
         if (i == 3)
         {

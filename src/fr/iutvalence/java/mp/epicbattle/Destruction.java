@@ -34,9 +34,8 @@ public class Destruction extends Effect
      */
     private int damage;
 
-    // TODO (fixed) detail comment (to discuss)
     /**
-     * It an effect which allows a warrior to attack an other warrior.
+     * It is an effect which allows a warrior to attack an other warrior.
      * This constructor create a Destruction object with a name, a speed and damage.
      * The object will be created as constants, which can be choice by the player.
      * 
