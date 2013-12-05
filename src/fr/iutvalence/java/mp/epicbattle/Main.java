@@ -21,15 +21,15 @@ public class Main
         
          Warrior[] listWarriors1;
          listWarriors1 = new Warrior[2];
-         listWarriors1[1] = Warrior.AXEMAN1;
-         listWarriors1[2] = Warrior.BUISNESSMAN;
+         listWarriors1[0] = Warrior.AXEMAN1;
+         listWarriors1[1] = Warrior.BUISNESSMAN;
          
          Warrior[] listWarriors2;
          listWarriors2 = new Warrior[2];
-         listWarriors2[1] = Warrior.AXEMAN2;
-         listWarriors2[2] = Warrior.SPEARMAN1;
+         listWarriors2[0] = Warrior.AXEMAN2;
+         listWarriors2[1] = Warrior.SPEARMAN1;
          
-        game = new Battle(J1, Heros.CONAN, listWarriors1, J2, Heros.CONAN, listWarriors2); 
+        game = new Battle(J1, Hero.CONAN, listWarriors1, J2, Hero.CONAN, listWarriors2); 
         game.play();
 
     }

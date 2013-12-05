@@ -1,34 +1,32 @@
 package fr.iutvalence.java.mp.epicbattle;
 
-// TODO (fix) write comment
+/**
+ * This effect which allows the player to change warrior
+ * @author gerlandl
+ *
+ */
+// TODO (fixed) write comment
 public class Swap extends Effect
 {
-    // TODO (fix) write comment
+    // TODO (fixed) write comment
+    /**
+     * The effect which allows the player to change warrior
+     */
     public final static Effect SWAP = new Swap();
 
-    // TODO (fix) write comment
-    private int indexWarrior;
-
-    // TODO (fix) write comment
+    /**
+     * It creates a swap effect
+     */
+    // TODO (fixed) write comment
     public Swap()
     {
         super("Swap", 0, Effect.SWAP, true);
-        this.indexWarrior = 0;
     }
 
-    // TODO (fix) write comment
-    public void chooseWarrior(int indexWarrior)
-    {
-        this.indexWarrior = indexWarrior;
-    }
-
-    // TODO (fix) write comment
-    public int getIndexWarrior()
-    {
-        return this.indexWarrior;
-    }
-
-    // TODO (fix) write comment
+    /**
+     * Unused function
+     */
+    // TODO (fixed) write comment
     public void application(int power, Warrior target)
     {
 

@@ -6,14 +6,14 @@ package fr.iutvalence.java.mp.epicbattle;
  *         compounded of his name, his spells, (a picture) and a passive power
  *         which will impact warriors' characteristics.
  */
-// TODO (fix) rename class (Hero)
-public class Heros
+// TODO (fixed) rename class (Hero)
+public class Hero
 {
     // Heroes
     /**
      * Conan is an offensive hero.
      */
-    public final static Heros CONAN = new Heros("Conan", Destruction.YELL, Destruction.BARBARIANKARMA);
+    public final static Hero CONAN = new Hero("Conan", Destruction.YELL, Destruction.BARBARIANKARMA);
     
     /**
      * The name of the Heros
@@ -41,7 +41,7 @@ public class Heros
      * @param passivePower
      *            His passive
      */
-    public Heros(String name, Effect spell, Effect passivePower)
+    public Hero(String name, Effect spell, Effect passivePower)
     {
         this.name = name;
         this.passivePower = passivePower;

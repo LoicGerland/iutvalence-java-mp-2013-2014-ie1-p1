@@ -9,15 +9,38 @@ import java.util.Scanner;
 public class Input
 {
     /**
+     * The warrior chosen by the player
+     */
+    private int indexWarriorChosen;
+    
+    /**
      * This method is used to get the choice of the player
      * @return the index of the choice in listchoices
      */
-    // TODO (fix) this should not be static
-    public static int getPlayerChoice()
+    // TODO (fixed) this should not be static
+    public int getPlayerChoice()
     {
         Scanner sc = new Scanner(System.in);
         System.out.println("Veuillez entrez le numéro de votre choix:");
         int i = sc.nextInt();
         return i;
     }
+    
+    /**
+     * 
+     */
+    public void chooseWarrior()
+    {
+        this.indexWarriorChosen = getPlayerChoice();
+    }
+    
+    /**
+     * It returns the index of the warrior
+     * @return the index of the warrior
+     */
+    public int getIndexWarrior()
+    {
+        return this.indexWarriorChosen;
+    }
+
 }

@@ -15,7 +15,7 @@ public class Player
     /**
      * The heros which was chosen by the player.
      */
-    private Heros heroChosen;
+    private Hero heroChosen;
 
     /**
      * The warrior which was chosen by the player.
@@ -27,6 +27,9 @@ public class Player
      */
     private Warrior[] listWarriors;
 
+    private Input input;
+    
+    private Output output;
 
     /**
      * This constructor creates the player with the hero chosen
@@ -38,12 +41,14 @@ public class Player
      * @param warriorChosen
      *            The warrior chosen by the player
      */
-    public Player(String name, Heros heroChosen, Warrior[] listWarriors)
+    public Player(String name, Hero heroChosen, Warrior[] listWarriors)
     {
         this.name = name;
         this.heroChosen = heroChosen;
         this.listWarriors = listWarriors;
         this.warriorChosen = listWarriors[0];
+        this.input = new Input();
+        this.output = new Output();
     }
 
     /**
@@ -61,7 +66,7 @@ public class Player
      * 
      * @return the hero of the player
      */
-    public Heros getHero()
+    public Hero getHero()
     {
         return this.heroChosen;
     }
@@ -72,20 +77,22 @@ public class Player
      *              A List of all the Effect of the game
      * @return the player's choice
      */
-    public Choice getChoice(Effect[] listChoices)
+    public Effect getChoice(Effect[] listChoices)
     {
         int i;
-        Choice choice = null;
-        // TODO (fix) Ther should be a separate instance of Output and Input for each Player instance
-        Output.displayAttacks(listChoices);
-        i = Input.getPlayerChoice();
-        if (i == 3)
+        Effect choice = null;
+        // TODO (fixed) Ther should be a separate instance of Output and Input for each Player instance
+        this.output.displayAttacks(listChoices);
+        i = this.input.getPlayerChoice();
+        if (i == 2)
         {
             int j;
-            Output.displayWarriors(this.listWarriors);
-            choice.getEffect().chooseWarrior() = Input.getPlayerChoice();
+            this.output.displayWarriors(this.listWarriors);
+            this.input.chooseWarrior();
+            choice = Swap.SWAP; 
         }
-        choice = new Choice(listChoices[i]);
+        else
+            choice = listChoices[i];
         return choice; 
     }
     
@@ -104,6 +111,7 @@ public class Player
     }
     
     /**
+     * It returns the name of the player
      * @return The name of the player
      */
 public String getName()
@@ -111,9 +119,12 @@ public String getName()
        return this.name;
    }
 
-    public void changeWarrior(Warrior[] listWarriors)
+    /**
+     * It changes the warrior who is controlled by the player
+     */
+    public void changeWarrior()
     {
-        
+        this.warriorChosen = this.listWarriors[this.input.getIndexWarrior()];
     }
 
 }
