@@ -27,8 +27,14 @@ public class Player
      */
     private Warrior[] listWarriors;
 
+    /**
+     * The input of the player
+     */
     private Input input;
     
+    /**
+     * The Output of the player
+     */
     private Output output;
 
     /**
@@ -38,8 +44,8 @@ public class Player
      *            The name of the player
      * @param heroChosen
      *            The hero which the player chose.
-     * @param warriorChosen
-     *            The warrior chosen by the player
+     * @param listWarriors
+     *            The warriors of the player
      */
     public Player(String name, Hero heroChosen, Warrior[] listWarriors)
     {
@@ -76,8 +82,9 @@ public class Player
      * @param listChoices 
      *              A List of all the Effect of the game
      * @return the player's choice
+     * @throws SameWarriorException The exception if the player swap the same warrior
      */
-    public Effect getChoice(Effect[] listChoices)
+    public Effect getChoice(Effect[] listChoices) throws SameWarriorException
     {
         int i;
         Effect choice = null;
@@ -89,26 +96,17 @@ public class Player
             int j;
             this.output.displayWarriors(this.listWarriors);
             this.input.chooseWarrior();
+            if (this.warriorChosen!=this.listWarriors[this.input.getIndexWarrior()])
+                throw new SameWarriorException();
             choice = Swap.SWAP; 
+
+                
         }
         else
             choice = listChoices[i];
         return choice; 
     }
     
-    /**
-     * It checks the validity of the swap.
-     * @param numW the index of the warrior
-     * @param numP the index of the player
-     * @return
-     * @throws SameWarriorException if the Warrior select it the same
-     */
-    public boolean compareWarrior(int numW, int numP) throws SameWarriorException
-    {
-        if (this.warriorChosen==this.listWarriors[numW])
-            throw new SameWarriorException();
-        else return true;
-    }
     
     /**
      * It returns the name of the player
@@ -126,5 +124,4 @@ public String getName()
     {
         this.warriorChosen = this.listWarriors[this.input.getIndexWarrior()];
     }
-
 }

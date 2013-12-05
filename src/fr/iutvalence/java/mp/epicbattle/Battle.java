@@ -95,10 +95,21 @@ public class Battle
         listChoices2[2] = Swap.SWAP;
 
         Effect[] choiceP = new Effect[2];
-
+        try{
         choiceP[0] = this.players[PLAYER1].getChoice(listChoices1);
-        choiceP[1] = this.players[PLAYER2].getChoice(listChoices2);
-
+        }
+        catch (SameWarriorException e1)
+        {
+            
+        }
+        try
+        {
+            choiceP[1] = this.players[PLAYER2].getChoice(listChoices2);
+        }
+        catch (SameWarriorException e2)
+        {
+            
+        }
         int var = 1;
         if (choiceP[PLAYER1].getSpeed() >= choiceP[PLAYER2].getSpeed())
             var = 0;
@@ -132,8 +143,10 @@ public class Battle
                     choice.application(0, this.players[num].getWarrior());
             // The Swap choice
                 else
+                {
                     this.players[num].changeWarrior();
-            }
+                }
+             }
 
         }
         // Attack
