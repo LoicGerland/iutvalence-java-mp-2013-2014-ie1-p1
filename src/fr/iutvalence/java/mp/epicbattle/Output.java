@@ -8,30 +8,25 @@ package fr.iutvalence.java.mp.epicbattle;
  */
 public class Output
 {
-    
-
-    
+ 
     /**
      * It displays player's attacks
      * 
      * @param listChoices
      *            list of his choices
      */
-    // TODO (fixed) this should not be static
     public void displayAttacks(Effect[] listChoices)
     {
         for (int i = 0; i < 3; i++)
             System.out.println(i + ". " + listChoices[i].getName());
     }
 
-    // TODO (fixed) fix comment
     /**
      * It displays the warriors of the player
      * 
      * @param listWarriors
      *            list of his Warriors
      */
-    // TODO (fixed) this should not be static
     public void displayWarriors(Warrior[] listWarriors)
     {
         for (int i = 0; i < 2; i++)
@@ -44,7 +39,6 @@ public class Output
      * @param players
      *            The players
      */
-    // TODO (fixed) this should not be static
     public void displayGameState(Player[] players)
     {
         System.out.println(players[Battle.PLAYER1].getHero().getName() + " " + players[Battle.PLAYER1].getWarrior().getName()

@@ -12,13 +12,11 @@ public class Battle
     /**
      * it defines the index of the player 1 in the table players
      */
-    // TODO (fixed) rename constant
     public final static int PLAYER1 = 0;
 
     /**
      * it defines the index of the player 2 in the table players
      */
-    // TODO (fixed) rename constant
     public final static int PLAYER2 = 1;
 
     /**
@@ -29,9 +27,9 @@ public class Battle
     /**
      * The output of the battle
      */
+    // TODO (next step) make battle be independant of any particular output
     private Output outBattle;
 
-    // TODO (fixed) fix comment (parameters)
     /**
      * This constructor creates a battle between two players. It also assigns a
      * hero to each players.

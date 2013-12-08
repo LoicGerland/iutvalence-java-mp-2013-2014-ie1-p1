@@ -12,13 +12,11 @@ public class Warrior
      */
     public final static Warrior AXEMAN1 = new Warrior("Axeman1", 10, 30, 1000, 10, Destruction.AXBLOW);
     
- // TODO (fixed) write comment
     /**
      * Spearman is warrior with a spear
      */
     public final static Warrior SPEARMAN1 = new Warrior("Spearman", 5, 50, 200, 15, Destruction.SPEARBLOW);
     
- // TODO (fixed) write comment
     /**
      * Axeman2 is a barbarian warrior.
      */
@@ -27,7 +25,7 @@ public class Warrior
     /**
      * Buisnessman is warrior which do buisness
      */
-// TODO (fixed) write comment
+    // TODO (fix) you mean businessman ?
     public final static Warrior BUISNESSMAN = new Warrior ("Buisnessman", 50000, 1000, 5, 2, Destruction.YELL);
     
     /**

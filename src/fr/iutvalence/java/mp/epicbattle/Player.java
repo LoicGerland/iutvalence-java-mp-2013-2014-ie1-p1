@@ -30,6 +30,7 @@ public class Player
     /**
      * The input of the player
      */
+    // TODO (next step) make player be independant of any particular input
     private Input input;
     
     /**
@@ -87,8 +88,7 @@ public class Player
     public Effect getChoice(Effect[] listChoices) throws SameWarriorException
     {
         int i;
-        Effect choice = null;
-        // TODO (fixed) Ther should be a separate instance of Output and Input for each Player instance
+        Effect choice = null; 
         this.output.displayAttacks(listChoices);
         i = this.input.getPlayerChoice();
         if (i == 2)

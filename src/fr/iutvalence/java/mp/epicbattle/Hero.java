@@ -6,7 +6,6 @@ package fr.iutvalence.java.mp.epicbattle;
  *         compounded of his name, his spells, (a picture) and a passive power
  *         which will impact warriors' characteristics.
  */
-// TODO (fixed) rename class (Hero)
 public class Hero
 {
     // Heroes
