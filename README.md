@@ -18,6 +18,5 @@ Each warrior has specific characteristics :
 - Speed
 - Intelligence
 - Vitality
-- Defense
-- Faith
-	
+
+

@@ -31,6 +31,10 @@ public class Battle
     private OutputInterface outBattle;
 
     /**
+     * The duration of the game
+     */
+    private TimeThread Time;
+    /**
      * This constructor creates a battle between two players. It also assigns a
      * hero to each players.
      * 
@@ -71,8 +75,10 @@ public class Battle
      */
     public void play()
     {
+        this.Time = new TimeThread();
+        this.Time.start();        
         int numberOfCurrentTurn = 0;
-        while (numberOfCurrentTurn < 1)
+        while (numberOfCurrentTurn < 5)
         {
             doTheTurn();
             numberOfCurrentTurn = numberOfCurrentTurn + 1;
