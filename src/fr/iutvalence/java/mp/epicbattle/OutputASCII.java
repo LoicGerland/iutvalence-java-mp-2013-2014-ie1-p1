@@ -6,9 +6,9 @@ package fr.iutvalence.java.mp.epicbattle;
  * @author GERLAND, KAYRAK
  * 
  */
-public class Output
+public class OutputASCII implements OutputInterface
 {
- 
+
     /**
      * It displays player's attacks
      * 

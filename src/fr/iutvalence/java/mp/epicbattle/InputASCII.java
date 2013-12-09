@@ -6,7 +6,7 @@ import java.util.Scanner;
  * @author GERLAND, KAYRAK
  *
  */
-public class Input
+public class InputASCII implements InputInterface
 {
     /**
      * The warrior chosen by the player

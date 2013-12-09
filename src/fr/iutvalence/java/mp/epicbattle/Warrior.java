@@ -25,8 +25,8 @@ public class Warrior
     /**
      * Buisnessman is warrior which do buisness
      */
-    // TODO (fix) you mean businessman ?
-    public final static Warrior BUISNESSMAN = new Warrior ("Buisnessman", 50000, 1000, 5, 2, Destruction.YELL);
+    // TODO (fixed) you mean businessman ?
+    public final static Warrior BUSINESSMAN = new Warrior ("Businessman", 50000, 1000, 5, 2, Destruction.YELL);
     
     /**
      * The name of the warrior's class. (ex : spearman, wizard)

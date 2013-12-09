@@ -31,12 +31,12 @@ public class Player
      * The input of the player
      */
     // TODO (next step) make player be independant of any particular input
-    private Input input;
+    private InputInterface input;
     
     /**
      * The Output of the player
      */
-    private Output output;
+    private OutputInterface output;
 
     /**
      * This constructor creates the player with the hero chosen
@@ -47,15 +47,19 @@ public class Player
      *            The hero which the player chose.
      * @param listWarriors
      *            The warriors of the player
+     * @param input
+     *            The input of the player 
+     * @param output
+     *            The output of the player 
      */
-    public Player(String name, Hero heroChosen, Warrior[] listWarriors)
+    public Player(String name, Hero heroChosen, Warrior[] listWarriors,InputInterface input, OutputInterface output)
     {
         this.name = name;
         this.heroChosen = heroChosen;
         this.listWarriors = listWarriors;
         this.warriorChosen = listWarriors[0];
-        this.input = new Input();
-        this.output = new Output();
+        this.input = input;
+        this.output = output;
     }
 
     /**
@@ -93,7 +97,6 @@ public class Player
         i = this.input.getPlayerChoice();
         if (i == 2)
         {
-            int j;
             this.output.displayWarriors(this.listWarriors);
             this.input.chooseWarrior();
             if (this.warriorChosen!=this.listWarriors[this.input.getIndexWarrior()])

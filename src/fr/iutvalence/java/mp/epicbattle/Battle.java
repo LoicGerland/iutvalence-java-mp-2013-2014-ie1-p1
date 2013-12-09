@@ -27,8 +27,8 @@ public class Battle
     /**
      * The output of the battle
      */
-    // TODO (next step) make battle be independant of any particular output
-    private Output outBattle;
+    // TODO (Fixed) make battle be independant of any particular output
+    private OutputInterface outBattle;
 
     /**
      * This constructor creates a battle between two players. It also assigns a
@@ -46,13 +46,24 @@ public class Battle
      *            His heros
      * @param listWarriors2
      *            The warriors he chose
+     * @param outBattle 
+     *            The output of the battle
+     * @param outP1
+     *            The output of the player1 
+     * @param outP2
+     *            The output of the player2 
+     * @param inP1
+     *            The input of the player1 
+     * @param inP2
+     *            The input of the player2 
      */
-    public Battle(String name1, Hero hero1, Warrior[] listWarriors1, String name2, Hero hero2, Warrior[] listWarriors2)
+    public Battle(String name1, Hero hero1, Warrior[] listWarriors1, String name2, Hero hero2, Warrior[] listWarriors2, 
+            OutputInterface outBattle, OutputInterface outP1, OutputInterface outP2, InputInterface inP1, InputInterface inP2)
     {
         this.players = new Player[2];
-        this.players[0] = new Player(name1, hero1, listWarriors1);
-        this.players[1] = new Player(name2, hero2, listWarriors2);
-        this.outBattle = new Output();
+        this.players[0] = new Player(name1, hero1, listWarriors1,inP1,outP1);
+        this.players[1] = new Player(name2, hero2, listWarriors2,inP2,outP2);
+        this.outBattle = outBattle;
     }
 
     /**
